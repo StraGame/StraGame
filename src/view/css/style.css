@@ -710,7 +710,7 @@ hr {
 /*side bar*/
 
 .sidebar97239 {
-    margin-top: 70px;
+    margin-top: 40px;
 }
 
 .status-part3821 {
@@ -1419,7 +1419,7 @@ h5:hover {
 
 .breadcrumb839 {
     padding: 8px 15px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     list-style: none;
     background-color: transparent;
     border-radius: 4px;
