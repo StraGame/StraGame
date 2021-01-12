@@ -1496,7 +1496,7 @@ h5:hover {
 }
 
 .form-description433 {
-    margin-right: 90px;
+    margin-right: 105px;
     color: #fd7362;
     font-family: fontawesome;
     font-weight: bold;
@@ -1569,6 +1569,8 @@ h5:hover {
     border: 1px solid #fd6371;
     background-color: #F3F3F3;
     outline: none;
+    padding: 10px;
+    color: #595959;
 }
 
 .form-description43313 {
