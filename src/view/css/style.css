@@ -497,6 +497,32 @@ hr {
     box-shadow: 0px 0px 13px -3px #777;
 }
 
+.question-typegame {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 13px -3px #777;
+    text-align: center;
+}
+
+#griglia {
+    padding: 0;
+    margin: 0;
+    }
+
+#griglia > li {
+    vertical-align: top;
+    box-shadow: 0px 0px 13px 3px #777;
+    display: inline-block;
+    width: 100px;
+    height: 160px;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #ffffff00;
+    }
+
 .left-user12923 {}
 
 .left-user12923-repeat {
