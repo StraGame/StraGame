@@ -1450,7 +1450,45 @@ h5:hover {
     border: 1px solid #fd6371;
 }
 
+.username38 {
+    margin-left: 100px;
+    width: 50%;
+    height: 40px;
+    background-color: #F3F3F3;
+    border: none;
+    outline: inherit;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #fd6371;
+}
 
+.form-description38 {
+    margin-right: 8.83px;
+    color: #fd7362;
+    font-family: fontawesome;
+    font-weight: bold;
+}
+
+.form-description39 {
+    margin-right: 27.5px;
+    color: #fd7362;
+    font-family: fontawesome;
+    font-weight: bold;
+}
+
+.form-description40 {
+    margin-right: 0.67px;
+    color: #fd7362;
+    font-family: fontawesome;
+    font-weight: bold;
+}
+
+.form-description41 {
+    margin-right: 25.56px;
+    color: #fd7362;
+    font-family: fontawesome;
+    font-weight: bold;
+}
 
 .form-description43 {
     /*margin-right: 108px;*/
@@ -1474,6 +1512,18 @@ h5:hover {
     border: 1px solid #fd6371;
 }
 
+.email39 {
+    margin-left: 100px;
+    width: 75%;
+    height: 40px;
+    background-color: #F3F3F3;
+    border: none;
+    outline: inherit;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #fd6371;
+}
+
 .form-description442 {
     margin-right: 130px;
     color: #fd7362;
@@ -1485,7 +1535,23 @@ h5:hover {
     margin-top: 50px;
 }
 
+.question-title41 {
+    margin-top: 30px;
+}
+
 .question-ttile32 {
+    width: 75%;
+    height: 40px;
+    background-color: #F3F3F3;
+    border: none;
+    outline: inherit;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #fd6371;
+}
+
+.question-ttile40 {
+    margin-left: 100px;
     width: 75%;
     height: 40px;
     background-color: #F3F3F3;
@@ -1602,12 +1668,24 @@ h5:hover {
 }
 
 .list-category533 {
-    width: 250px;
+    width: 150px;
     height: 30px;
     background-color: #F3F3F3;
     border: none;
     outline: inherit;
-    margin-left: 50px;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #fd6371;
+}
+
+.list-category534 {
+    width: 150px;
+    height: 30px;
+    background-color: #F3F3F3;
+    border: none;
+    outline: inherit;
+    margin-left: 20px;
     padding: 10px;
     border-radius: 3px;
     border: 1px solid #fd6371;
@@ -1695,7 +1773,18 @@ h5:hover {
 .question-details3112 {
     margin-left: 100px;
     height: 200px;
-    width: 70%;
+    width: 75%;
+    border: 1px solid #fd6371;
+    background-color: #F3F3F3;
+    outline: none;
+    padding: 10px;
+    color: #595959;
+}
+
+.question-details3133 {
+    margin-left: 80px;
+    height: 200px;
+    width: 75%;
     border: 1px solid #fd6371;
     background-color: #F3F3F3;
     outline: none;
@@ -1704,7 +1793,7 @@ h5:hover {
 }
 
 .form-description43313 {
-    /*margin-right: 131px;*/
+    margin-right: 25.56px;
     color: #fd7362;
     font-family: fontawesome;
     font-weight: bold;
