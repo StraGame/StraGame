@@ -538,6 +538,7 @@ hr {
 
 .button {
     color: white;
+    width:max-content;
     padding: 8px;
     font-family: Arial;
     }
