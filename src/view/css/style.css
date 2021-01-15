@@ -523,17 +523,40 @@ hr {
     background-color: #ffffff00;
     }
 
+.genere{
+    font-size: 15px;
+    color:#696969
+}
+
 .label {
     color: white;
     padding: 8px;
     font-family: Arial;
-    margin-left: 20px;
-    height: 30px;
     }
 
-.success {
+.like {
     font-size: 14px;
     background-color: #FF7361;
+}
+
+.comment {
+    font-size: 14px;
+    background-color: #FF7361;
+}
+
+.utente {
+    font-size: 14px;
+    background-color: #FF7361;
+}
+
+.videogioco{
+    font-size: 14px;
+    background-color: #696969;
+}
+
+.categoria{
+    font-size: 14px;
+    background-color: #8d8d8d;
 }
 
 .left-user12923 {}
@@ -671,6 +694,13 @@ hr {
 
 .ques-icon-info3293 .check-color329 {
     color: red;
+}
+
+.clockcomment{
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: -10px;
+    color: #696969;
 }
 
 .two-part3280 {
