@@ -523,6 +523,19 @@ hr {
     background-color: #ffffff00;
     }
 
+.label {
+    color: white;
+    padding: 8px;
+    font-family: Arial;
+    margin-left: 20px;
+    height: 30px;
+    }
+
+.success {
+    font-size: 14px;
+    background-color: #FF7361;
+}
+
 .left-user12923 {}
 
 .left-user12923-repeat {
