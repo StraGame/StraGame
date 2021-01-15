@@ -701,6 +701,13 @@ hr {
     font-family: fontawesome;
 }
 
+.testogiochi{
+    margin-top: 5px;
+    color: #FF7361;
+    font-weight: bold;
+    font-size: small;
+}
+
 .continue-deatils738 {
     text-align: right;
 }
