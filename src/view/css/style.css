@@ -505,6 +505,13 @@ hr {
     box-shadow: 0px 0px 13px -3px #777;
 }
 
+.questionvideogame {
+    background-color: rgba(255, 255, 255, 0);
+    margin-bottom: -20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
 .question-typegame {
     background-color: #fff;
     margin: 0 auto;
@@ -532,7 +539,7 @@ hr {
     }
 
 .genere{
-    font-size: 15px;
+    font-size: 25px;
     color:#696969
 }
 
@@ -610,6 +617,16 @@ hr {
     border-radius: 50%;
 }
 
+.leftVideogame{
+    margin-top: 18px;
+}
+
+.leftVideogame img {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+}
+
 #que-hedder2983 {}
 
 #que-hedder2983 h3 {
@@ -661,6 +678,16 @@ hr {
 }
 
 .right-description893 {}
+
+.right-description892 {
+    margin-top: 25px;
+    margin-left: 45px;
+}
+
+.descrizione {
+    font-size: 14px;
+    color: black;
+}
 
 .ques-details10018 p {
     margin-top: 10px;
