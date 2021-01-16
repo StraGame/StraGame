@@ -551,13 +551,51 @@ hr {
     }
 
 .delete {
-    font-size: 14px;
-    background-color: red;
+    border-color: #FF7361;
+    margin-left: -10px;
+    width: 123px;
+    margin-bottom: -5px;
+    border-radius: 5%;
+    font-size: 10px;
+    background-color: #FF7361;
 }
 
 .approve {
-    font-size: 14px;
-    background-color: green;
+    border-color: #00af58;
+    margin-left: -10px;
+    width: 123px;
+    margin-bottom: 10px;
+    border-radius: 5%;
+    font-size: 10px;
+    background-color: #00af58;
+}
+
+.deleteuser {
+    border-color: #FF7361;
+    margin-left: -10px;
+    width: 123px;
+    border-radius: 5%;
+    font-size: 10px;
+    background-color: #FF7361;
+}
+
+.viewSegnalazione {
+    border-color: #696969;
+    margin-left: -10px;
+    width: 123px;
+    border-radius: 5%;
+    font-size: 10px;
+    background-color: #696969;
+}
+
+.viewSegnalazionep {
+    border-color: #696969;
+    margin-left: -10px;
+    width: 123px;
+    margin-bottom: 10px;
+    border-radius: 5%;
+    font-size: 10px;
+    background-color: #696969;
 }
 
 .label {
@@ -855,6 +893,12 @@ hr {
     padding-bottom: 10px;
 }
 
+.titolo{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: -30px;
+}
 
 /*categori part*/
 
