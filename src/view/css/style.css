@@ -1828,6 +1828,13 @@ h5:hover {
     font-weight: bold;
 }
 
+.form-description43308 {
+    margin-right: 24px;
+    color: #fd7362;
+    font-family: fontawesome;
+    font-weight: bold;
+}
+
 .form-description43355 {
     margin-right: 48.05px;
     color: #fd7362;
@@ -1868,8 +1875,21 @@ h5:hover {
     float: left;
 }
 
+.form-description23999 {
+    margin-right: 142px;
+    color: #fd7362;
+    font-family: fontawesome;
+    font-weight: bold;
+    float: left;
+}
+
 .button-group-addfile3239 {
     margin-top: 20px;
+}
+
+.button-group-addfile3237 {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .question-ttile3217 {
