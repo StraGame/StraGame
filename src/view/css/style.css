@@ -2153,6 +2153,16 @@ h5:hover {
     font-size: 12px;
 }
 
+.l-rightside45 {
+    margin-top: -25px;
+    float: right;
+}
+
+.l-rightside45 i {
+    color: #ff7361;
+    font-size: 25px;
+}
+
 
 /*
 .l-rightside39 .thumbs-up2:hover{
