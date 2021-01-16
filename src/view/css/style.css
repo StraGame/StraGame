@@ -619,6 +619,12 @@ hr {
     background-color: #FF7361;
 }
 
+.utentes {
+    font-size: 14px;
+    background-color: #FF7361;
+    margin-left: 50px;
+}
+
 .videogioco{
     font-size: 14px;
     background-color: #696969;
@@ -627,6 +633,11 @@ hr {
 .categoria{
     font-size: 14px;
     background-color: #8d8d8d;
+}
+
+.segnalazionecreata{
+    margin-top: 20px;
+    font-size: 20px;
 }
 
 .left-user12923 {}
