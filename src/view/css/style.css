@@ -847,7 +847,7 @@ hr {
 
 .testogiochi{
     margin-top: 5px;
-    color: #FF7361;
+    color: #857270;
     font-weight: bold;
     font-size: small;
 }
@@ -2166,7 +2166,8 @@ h5:hover {
 
 .l-rightside45 {
     margin-top: -25px;
-    float: right;
+    margin-left: 720px;
+    margin-right: 20px;
 }
 
 .l-rightside45 i {
