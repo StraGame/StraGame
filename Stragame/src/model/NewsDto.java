@@ -12,11 +12,11 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class BugDto implements BugDao {
-	
-	private static DataSource ds;
+public class NewsDto implements NewsDao{
 
-	static {
+    private static DataSource ds;
+
+    static {
 		try {
 			Context initCtx = new InitialContext();
 			Context envCtx = (Context) initCtx.lookup("java:comp/env");
@@ -27,11 +27,10 @@ public class BugDto implements BugDao {
 		} catch (NamingException e) {
 			System.out.println("Error:" + e.getMessage());
 		}
-	}
-
-
-	@Override
-	public void insertBug(BugBean b)throws SQLException{
+    }
+    
+    @Override
+	public void insertNews(NewsBean n)throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -39,20 +38,18 @@ public class BugDto implements BugDao {
 		Date oggi = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD HH:mm:ss");
 
-		String insertSQL = "INSERT INTO " + "bug"
-				+ " (codicebug,autore,videogioco,data,titolo,testo,categoria) VALUES (?, ?, ?, ?, ? , ? , ?)";
+		String insertSQL = "INSERT INTO " + "news"
+				+ " (codicenews,autore,data,titolo,testo) VALUES (? , ? , ? , ? , ?)";
 
 		try {
 			connection = ds.getConnection();
 			preparedStatement = connection.prepareStatement(insertSQL);
 			
-			preparedStatement.setInt(1, b.getCodicebug());
-			preparedStatement.setString(2, b.getAutore());
-			preparedStatement.setString(3, b.getVideogioco());
-			preparedStatement.setString(4, sdf.format(oggi));
-			preparedStatement.setString(5, b.getTitolo());
-			preparedStatement.setString(6, b.getTesto());
-			preparedStatement.setString(7, b.getCategoria());
+			preparedStatement.setInt(1, n.getCodiceNews());
+			preparedStatement.setString(2, n.getAutore());
+			preparedStatement.setString(3, sdf.format(oggi));
+			preparedStatement.setString(4, n.getTitolo());
+			preparedStatement.setString(5, n.getTesto());
 
 			preparedStatement.executeUpdate();
 
@@ -67,17 +64,17 @@ public class BugDto implements BugDao {
 			}
 		}
 		
-	}
+    }
 
-	@Override
-	public void removeBug(int id)throws SQLException{
+    @Override
+	public void removeNews(int id)throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
 		
 
-		String deleteSQL = "DELETE FROM " + "bug" + " WHERE codicebug = ?";
+		String deleteSQL = "DELETE FROM " + "news" + " WHERE codicenews = ?";
 
 		try {
 			connection = ds.getConnection();
@@ -97,16 +94,16 @@ public class BugDto implements BugDao {
 		}
 		
 	}
-
-	@Override
-	public BugBean getBug(int id)throws SQLException{
+    
+    @Override
+	public NewsBean getNews(int id)throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
-		BugBean bean = new BugBean();
+		NewsBean bean = new NewsBean();
 
-		String selectSQL = "SELECT * FROM " + "bug" + " WHERE codicebug = ?";
+		String selectSQL = "SELECT * FROM " + "news" + " WHERE codicenews = ?";
 
 		try {
 			connection = ds.getConnection();
@@ -117,16 +114,12 @@ public class BugDto implements BugDao {
 
 			while (rs.next()) {
 				
-				bean.setCodicebug(rs.getInt("codicepubblicazione"));
+				bean.setCodiceNews(rs.getInt("codicenews"));
 				bean.setAutore(rs.getString("autore"));
-				bean.setVideogioco(rs.getString("videogioco"));
 				bean.setData(rs.getString("data"));
 				bean.setTitolo(rs.getString("titolo"));
 				bean.setTesto(rs.getString("testo"));
-				bean.setCategoria(rs.getString("categoria"));
-				
-				
-				
+		
 			}
 
 		} finally {
@@ -140,5 +133,5 @@ public class BugDto implements BugDao {
 		}
 		return bean;
 	}
-		
+
 }
