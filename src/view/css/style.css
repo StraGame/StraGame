@@ -2655,7 +2655,6 @@ h5:hover {
 .badge229 a {
     text-decoration: none;
     color: #fff;
-    margin-left: 20px;
     font-size: 10px;
     padding: 3px 10px 3px 10px;
     background-color: #DD9933;
@@ -2668,7 +2667,9 @@ h5:hover {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    float: left;
+    position: relative;
+    bottom: -30px;
+    left: 28px;
 }
 
 .user-list10039 {
@@ -2681,11 +2682,13 @@ h5:hover {
     list-style: none;
 }
 
-.ul-list-user29
+
 
 .ul-list-user-left29 {
-    float: left;
-    margin-right: 80px;
+   
+    margin-right: 100px;
+    margin-top: -40px;
+    padding-bottom: 20px;
 }
 
 .ul-list-user-right29 {
@@ -2713,6 +2716,7 @@ h5:hover {
     margin-bottom: 30px;
     color: #848991;
     font-family: fontawesome;
+    margin-top: -40px;
 }
 
 .user-description303 a {
@@ -2845,17 +2849,41 @@ h5:hover {
 .change-image {
 	background-color: #FF7361;
 	font-family: fontawesome;
-	box-shadow: 0px 0px 13px -3px;
-	height: 60px;
-    width: 140px;
     text-decoration: none;
     padding: 5px;
     color: #fff;
     font-family: fontawesome;
     font-size: 12px;
+    position: relative; 
+    left: 5px;
+    bottom: -50px;
    
 }
 
+.change-description {
+	background-color: #FF7361;
+	font-family: fontawesome;
+    text-decoration: none;
+    padding: 5px;
+    color: #fff;
+    font-family: fontawesome;
+    font-size: 12px;
+    position: relative; 
+    left: 725px;
+    bottom: 35px;
+}
+
+.change-password {
+	background-color: #FF7361;
+	font-family: fontawesome;
+    text-decoration: none;
+    padding: 5px;
+    color: #fff;
+    font-family: fontawesome;
+    font-size: 12px;
+    position: relative; 
+    margin-left: 2px;
+}
 
 
 
