@@ -658,10 +658,16 @@ hr {
 .utentes {
     font-size: 14px;
     background-color: #FF7361;
-    margin-left: 50px;
+    margin-left: 70px;
 }
 
 .videogioco{
+    font-size: 14px;
+    background-color: #696969;
+}
+
+.videogiocob{
+    margin-left: 50px;
     font-size: 14px;
     background-color: #696969;
 }
@@ -672,6 +678,13 @@ hr {
 }
 
 .segnalazionecreata{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.videogiocoBug{
+    text-align: center;
     margin-top: 20px;
     font-size: 20px;
 }
@@ -2341,6 +2354,10 @@ h5:hover {
 
 .post-title-left129 {
     /*  float: left;*/
+}
+
+.post-title-leftBug {
+    margin-top: 60px;
 }
 
 .post-que-rep-rihght320 {
