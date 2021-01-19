@@ -96,7 +96,7 @@ public class NewsDto implements NewsDao{
 	}
     
     @Override
-	public NewsBean getNews(int id)throws SQLException{
+	public NewsBean getNews(int codiceNews)throws SQLException{
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -108,7 +108,7 @@ public class NewsDto implements NewsDao{
 		try {
 			connection = ds.getConnection();
 			preparedStatement = connection.prepareStatement(selectSQL);
-			preparedStatement.setInt(1, id);
+			preparedStatement.setInt(1, codiceNews);
 
 			ResultSet rs = preparedStatement.executeQuery();
 
