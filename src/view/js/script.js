@@ -7,7 +7,7 @@ function upgradeMiPiace(){
 
 function returnRatingGP(){
     const container= document.querySelector('.star-ratingGP');
-    const items=container.querySelectorAll('.rating')
+    const items=container.querySelectorAll('.ratingGP')
 
     container.onclick= e =>{
         const elClass=e.target.classList;
@@ -17,7 +17,7 @@ function returnRatingGP(){
 
 function returnRatingT(){
     const container= document.querySelector('.star-ratingT');
-    const items=container.querySelectorAll('.rating')
+    const items=container.querySelectorAll('.ratingT')
 
     container.onclick= e =>{
         const elClass=e.target.classList;
@@ -27,7 +27,7 @@ function returnRatingT(){
 
 function returnRatingG(){
     const container= document.querySelector('.star-ratingG');
-    const items=container.querySelectorAll('.rating')
+    const items=container.querySelectorAll('.ratingG')
 
     container.onclick= e =>{
         const elClass=e.target.classList;
@@ -37,7 +37,7 @@ function returnRatingG(){
 
 function returnRatingVC(){
     const container= document.querySelector('.star-ratingVC');
-    const items=container.querySelectorAll('.rating')
+    const items=container.querySelectorAll('.ratingVC')
 
     container.onclick= e =>{
         const elClass=e.target.classList;
