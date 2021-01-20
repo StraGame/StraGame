@@ -1,8 +1,8 @@
-var contatore=0;
+
 
 function upgradeMiPiace(){
-    contatore++
-    document.getElementById("voti").innerHTML = contatore
+    var e = document.getElementById("voti");
+    e.innerHTML = Math.min(1,+e.innerHTML+1);
 }
 
 function returnRatingGP(){
