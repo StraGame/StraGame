@@ -3118,9 +3118,11 @@ h5:hover {
 
 
 .change-image {
+	cursor: pointer;
+	overflow: hidden;
 	background-color: #FF7361;
+	text-decoration: none;
 	font-family: fontawesome;
-    text-decoration: none;
     padding: 5px;
     color: #fff;
     font-family: fontawesome;
@@ -3128,8 +3130,23 @@ h5:hover {
     position: relative; 
     left: 5px;
     top: 30px;
+}
 
+.change-image a {
+	color: #fff;
+}
 
+.change-image a + input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.change-image:hover {
+    background-color: #222629;
+    color: #fff;
+    text-decoration: none;
 }
 
 .change-description {
@@ -3142,20 +3159,42 @@ h5:hover {
     font-size: 12px;
 
 }
+.change-description:hover {
+    background-color: #222629;
+    color: #fff;
+    text-decoration: none;
+}
+
 
 .change-password {
 	background-color: #FF7361;
+	text-decoration: none;
 	font-family: fontawesome;
-    text-decoration: none;
     padding: 5px;
     color: #fff;
     font-family: fontawesome;
     font-size: 12px;
     position: relative; 
     margin-left: 2px;
-  
 }
 
+.change-password:hover {
+    background-color: #222629;
+    color: #fff;
+    text-decoration: none;
+}
+
+.description {
+	width: 100%;
+	height: 80px;
+	border-style: none;
+	resize: none;
+	margin-top: -20px;
+	margin-bottom: 10px;
+	overflow: auto;
+    outline: none;
+}
+	
 
 
 
