@@ -574,7 +574,14 @@ hr {
     margin-left: 10px;
     margin-right: 10px;
     }
+    
+.titolo1 {
+	margin-top: 55px;
+	margin-bottom: -35px;
+}
 .genere{
+	margin-top: 40px;
+	margin-bottom: -25px;
     font-size: 25px;
     color:#696969
 }
