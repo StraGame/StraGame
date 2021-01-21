@@ -12,8 +12,9 @@ public class UserBean implements Serializable {
 	private String password;
 	private String email;
 	private String descrizione;
+	private Boolean segnalato;
 	
-	public UserBean(String nickname, String nome, String cognome, String ruolo, String password, String email, String descrizione) {
+	public UserBean(String nickname, String nome, String cognome, String ruolo, String password, String email, String descrizione, Boolean segnalato) {
 		
 		this.nickname = nickname;
 		this.nome = nome;
@@ -22,6 +23,7 @@ public class UserBean implements Serializable {
 		this.password = password;
 		this.email=email;
 		this.descrizione=descrizione;
+		this.segnalato= segnalato;
 	}
 	
 	public UserBean() {
@@ -32,6 +34,8 @@ public class UserBean implements Serializable {
 		this.ruolo="";
 		this.password="";
 		this.email="";
+		this.descrizione="";
+		this.segnalato=false;
 		
 	}
 	
@@ -85,6 +89,16 @@ public class UserBean implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	public Boolean getSegnalato() {
+		return segnalato;
+	}
+
+	public void setSegnalato(Boolean segnalato) {
+		this.segnalato = segnalato;
+	}
+	
+	
 	
 	
 
