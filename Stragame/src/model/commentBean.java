@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class commentBean implements Serializable{
+public class CommentBean implements Serializable{
     
     private int codicePubblicazione;
 	private String autore;
@@ -10,12 +10,12 @@ public class commentBean implements Serializable{
 	private String testo;
 	private int mipiace;
 
-    public commentBean() {
-        codicePubblicazione=null;
+    public CommentBean() {
+        codicePubblicazione=-1;
         autore="";
         data="";
         testo="";
-        mipiace="";
+        mipiace=-1;
     }
 
     public int getCodicePubblicazione() {

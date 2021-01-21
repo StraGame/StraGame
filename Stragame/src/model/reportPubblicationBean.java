@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class reportPubblicationBean {
+public class ReportPubblicationBean {
     
     private int codicePubblicazione;
 	private String autore;
@@ -10,8 +10,8 @@ public class reportPubblicationBean {
 	private String descrizione;
     private String data;
 
-    public reportPubblicationBean() {
-        codicePubblicazione="";
+    public ReportPubblicationBean() {
+        codicePubblicazione=-1;
         autore="";
         categoria="";
         descrizione="";

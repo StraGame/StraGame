@@ -1,13 +1,16 @@
 package model;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
-public interface videoGameDao {
+public interface VideoGameDao {
 	
-	public void insertVideoGame(videoGameBean vg) throws SQLException;
+	public void insertVideoGame(VideoGameBean vg) throws SQLException;
 	
-	public void removeVideoGame(string nome)throws SQLException;
+	public void removeVideoGame(String nome)throws SQLException;
 	
-	public BugBean getVideoGame(string nome)throws SQLException;
+	public VideoGameBean getVideoGame(String nome)throws SQLException;
+	
+	public ArrayList<String> getVideoGameNames()throws SQLException;
 
 }

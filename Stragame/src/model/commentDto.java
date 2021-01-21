@@ -13,7 +13,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class commentDto implements commentDao{
+public class CommentDto implements CommentDao{
     
     private static DataSource ds;
 
@@ -31,7 +31,7 @@ public class commentDto implements commentDao{
     }
     
     @Override
-	public void insertComment(commentBean c) throws SQLException {
+	public void insertComment(CommentBean c) throws SQLException {
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -50,7 +50,7 @@ public class commentDto implements commentDao{
             preparedStatement.setString(2, c.getAutore());
             preparedStatement.setString(3, sdf.format(oggi));
 			preparedStatement.setString(4, c.getTesto());
-			preparedStatement.setInt(5, p.getNumMiPiace());			
+			preparedStatement.setInt(5, c.getMipiace());			
 
 			preparedStatement.executeUpdate();
 
@@ -97,12 +97,12 @@ public class commentDto implements commentDao{
     }
     
     @Override
-	public ArrayList<commentBean> getCommentsbyPubblication(int codicePubblicazione) throws SQLException {
+	public ArrayList<CommentBean> getCommentsbyPubblication(int codicePubblicazione) throws SQLException {
 		
 		Connection conn=null;
 		PreparedStatement statement=null;
 		
-		ArrayList<PubblicationBean> l=null;
+		ArrayList<CommentBean> l=null;
 		
 		String selectSQL = "SELECT * FROM " + "comment" + " WHERE codicePubblicazione = ?";
 		
@@ -115,18 +115,18 @@ public class commentDto implements commentDao{
 			
 			ResultSet rs=statement.executeQuery();
 			
-			l=new ArrayList<PubblicationBean>();
+			l=new ArrayList<CommentBean>();
 			
 			while(rs.next()) {
 				
-				commentBean c=new PubblicationBean();
+				CommentBean c= new CommentBean();
 				c.setCodicePubblicazione(rs.getInt(1));
                 c.setAutore(rs.getString(2));
                 c.setData(rs.getString(3));
                 c.setTesto(rs.getString(4));
                 c.setMipiace(rs.getInt(5));
 
-				l.add(p);
+				l.add(c);
 				
 			}
         }

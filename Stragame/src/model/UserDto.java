@@ -294,7 +294,7 @@ public class UserDto implements UserDao {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + "user"
-				+ " (nickname,ruolo,email,nome,cognome,password,descrizione) VALUES (?, ?, ?, ?, ? , ? , ?)";
+				+ " (nickname,ruolo,email,nome,cognome,password,descrizione,segnalato) VALUES (?, ?, ?, ?, ? , ? , ?,?)";
 
 		try {
 			connection = ds.getConnection();
@@ -306,12 +306,13 @@ public class UserDto implements UserDao {
 			preparedStatement.setString(5, user.getCognome());
 			preparedStatement.setString(6, user.getPassword());
 			preparedStatement.setString(7, user.getDescrizione());
+			preparedStatement.setBoolean(8, user.getSegnalato());
 			
 			
 
 			preparedStatement.executeUpdate();
 
-			connection.commit();
+			//connection.commit();
 		} finally {
 			try {
 				if (preparedStatement != null)

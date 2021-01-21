@@ -2,13 +2,13 @@ package model;
 
 import java.io.Serializable;
 
-public class videoGameBean implements Serializable {
+public class VideoGameBean implements Serializable {
     
     private String nome;
 	private String genere;
     private String descrizione;
     
-    public videoGameBean() {
+    public VideoGameBean() {
 		
 		nome="";
 		genere="";

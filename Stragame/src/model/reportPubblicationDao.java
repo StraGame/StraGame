@@ -2,12 +2,12 @@ package model;
 
 import java.sql.SQLException;
 
-public interface reportPubblicationDao {
+public interface ReportPubblicationDao {
 
-    public void insertReportPubblication (reportPubblicationBean rp) throws SQLException;
+    public void insertReportPubblication (ReportPubblicationBean rp) throws SQLException;
 	
 	public void removeReportPubblication (int codicePubblicazione, String autore) throws SQLException;
 	
-    public reportPubblicationBean getReportPubblication (int codicePubblicazione, String autore) throws SQLException;
+    public ReportPubblicationBean getReportPubblication (int codicePubblicazione, String autore) throws SQLException;
     
 }

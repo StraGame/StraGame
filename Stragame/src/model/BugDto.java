@@ -53,6 +53,11 @@ public class BugDto implements BugDao {
 			preparedStatement.setString(5, b.getTitolo());
 			preparedStatement.setString(6, b.getTesto());
 			preparedStatement.setString(7, b.getCategoria());
+			
+			
+		
+			
+			
 
 			preparedStatement.executeUpdate();
 

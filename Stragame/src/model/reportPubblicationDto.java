@@ -14,7 +14,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 
-public class reportPubblicationDto implements reportPubblicationDao {
+public class ReportPubblicationDto implements ReportPubblicationDao {
 
     private static DataSource ds;
 
@@ -32,7 +32,7 @@ public class reportPubblicationDto implements reportPubblicationDao {
     }
     
     @Override
-	public void insertReportPubblication(reportPubblicationBean rp) throws SQLException {
+	public void insertReportPubblication(ReportPubblicationBean rp) throws SQLException {
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -95,12 +95,12 @@ public class reportPubblicationDto implements reportPubblicationDao {
     }
     
     @Override
-    public reportPubblicationBean getReportPubblication(int codicePubblicazione, String autore) throws SQLException{
+    public ReportPubblicationBean getReportPubblication(int codicePubblicazione, String autore) throws SQLException{
 
         Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
-		reportPubblicationBean bean = new reportPubblicationBean();
+		ReportPubblicationBean bean = new ReportPubblicationBean();
 
 		String selectSQL = "SELECT * FROM " + "reportpubblication" + " WHERE codicepubblicazione = ?"+ "AND" + "autore = ?";
 
