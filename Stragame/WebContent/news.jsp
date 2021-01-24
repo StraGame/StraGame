@@ -1,23 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-    <%ArrayList<NewsBean> list = (ArrayList<NewsBean>)request.getAttribute("news"); %>
-    
-     <%  String ut=(String) request.getSession().getAttribute("username");
-   Boolean adm= (Boolean) session.getAttribute("adminRoles");
-   %>
-    
+    <% ArrayList<PubblicationBean> recensioni = (ArrayList<PubblicationBean>)request.getAttribute("recensioni"); %>
+     <% ArrayList<String> videogiochi = (ArrayList<String>)request.getAttribute("videogiochi"); %>
 <!DOCTYPE html>
 <html lang="it">
 
-<%@ page contentType="text/html; charset=ISO-8859-1" import="java.util.*, java.util.ArrayList, model.NewsBean"%>
-
-<% if(list==null){
+<% if(recensioni==null){
 	
-	response.sendRedirect("./NewsServlet");	
+	response.sendRedirect("./ReviewServlet");	
 	return;
 	
 }	%>
+
+<% if(videogiochi==null){
+	
+	response.sendRedirect("./ReviewServlet");	
+	return;
+	
+}	%>
+
+<%@ page contentType="text/html; charset=ISO-8859-1" import="java.util.*, java.util.ArrayList, model.PubblicationBean"%>
 
 <head>
     <meta charset="utf-8">
@@ -28,7 +31,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/animate.css" rel="stylesheet" type="text/css">
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"> </head>
-   
+
 <body>
     <!--======== Navbar =======-->
     <div class="top-bar">
@@ -56,7 +59,7 @@
             </div>
         </div>
     </div>
- 
+    
     
     <!-- ==========header mega navbar=======-->
     <div class="top-menu-bottom932">
@@ -106,95 +109,99 @@
         </nav>
     </div>
 
+    <section class="header-descriptin329">
+        <div class="container">
+            <ol class="breadcrumb breadcrumb839">
+                <li><a href="index.jsp">Home</a></li>
+                <li class="active">Recensioni</li>
+            </ol>
+        </div>
+    </section>
 <!-- ======content section/body=====-->
+
     <section class="main-content920">
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
                     <div id="main">
                         <input id="tab1" type="radio" name="tabs" checked>
-                        <label for="tab1">News</label>
+                        <label for="tab1">Recensioni</label>
+                        <form class="form-inline" action="ReviewServlet" method="post">
+                    	<div class="form-group">
+                        <label>Videogioco</label>
+                        <input list="videogiochi" name="videogioco" class="list-category533" />
+                        <datalist id="videogiochi">
+                            <%for(String s: videogiochi){ %>
+                            
+                                <option value="<%= s %>">
+                                
+                                <% } %>
+                        </datalist>
+                        </div>
+                        	<input class="btn btn-default" type = "submit" value="Filtra"/>
+                        </form>
                                                 
                         <section id="content1">
-                               <!--Recent Question Content Section -->
+                               <%for(PubblicationBean b: recensioni){%>
                             <div class="question-type2033">
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            
+                                            <a href="#"><img src="image/images.png" alt="image"> </a>
                                         </div>
                                     </div>
-                                    <%for(NewsBean b : list){ %>
+                                    
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><%=b.getTitolo() %></h3> 
-                                            </div>
+                                                <span class="label utente">&#128100 <%=b.getAutore() %></span>
+                                                <span class="label videogioco">&#127918 <%=b.getVideogioco() %></span>
+                                                <h3><a href="ReviewDetailsServlet.jsp" target="_self"><%=b.getTitolo()%></a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p><%=b.getTesto() %></p>
+                                                <p><%=b.getDescrizione()%></p>
                                             </div>
                                             <hr>
-                                            <div class="ques-icon-info3293"> &#128336 Inserito il: <%=b.getData() %>
-                                                <div class="ul_list_ul_list-icon-ok281">
-                                                <div class="user-social3903">
-                                                <p> Share : <span>
-                                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                                                </span> </p>
-                                            </div>
+                                            <div class="clockcomment"> &#128336 <%=b.getData() %></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="ques-type302">
+                                                <br>
+                                                <br>
+                                                <span class="label like">&#128077 <%=b.getNumMiPiace() %></span>
+                                                
+                                                
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <%} %>
-                          
-                                </div>
-                            </div>
+
+                           <!--Most Response Content Section -->
+                            
+                            <!--End of content-1-->
                         </section>
-                        <!--  End of content-1------>
-                        
-                        
                     </div>
                 </div>
                 <!--end of col-md-9 -->
                 <!--strart col-md-3 (side bar)-->
                 <aside class="col-md-3 sidebar97239">
-                                     <!--              login part-->
-                    <% if (ut==null){ %>
+                    <!--              login part-->
                     <div class="login-part2389">
                         <h4>Login</h4>
-                        <form action = "LoginServlet" method = "POST">
                         <div class="input-group300"> <span><i class="fa fa-user" aria-hidden="true"></i></span>
-                            <input type="text" id="username" name="username" class="namein309" placeholder="username"> </div>
+                            <input type="text" class="namein309" placeholder="e-mail"> </div>
                         <div class="input-group300"> <span><i class="fa fa-lock" aria-hidden="true"></i></span>
-                            <input type="password" id="password" name="password" class="passin309" placeholder="password"> </div>
+                            <input type="password" class="passin309" placeholder="password"> </div>
                         <a href="#">
-                            <button type="Submit" class="userlogin320">Log In</button>
+                            <button type="button" class="userlogin320">Log In</button>
                         </a>
-                        
-                        </form>
                         <div class="rememberme">
                             <label>
-                                <input type="checkbox" checked="checked"> Remember Me</label> <a href="signUp.jsp" class="resbutton3892">Register</a> </div>
+                                <input type="checkbox" checked="checked"> Remember Me</label> <a href="signUp.jsp" class="resbutton3892">Registrati</a> </div>
                     </div>
                     
-                    	<%} else  { %>
-	
-	<td id="spaziologout"></td>
-	<td>
-	<form action="LogoutServlet" method="POST" >
-	<button type="Submit" class="btn btn-dark" > Logout</button>
-	</form>
-	</td>
-	
-	<%} %>
-                    
-                    <!--        start recent post  -->
+                    <!--        start Ultime news  -->
                     <div class="recent-post3290">
                         <h4>Ultime news</h4>
                         <div class="post-details021"> <a href="#"><h5>How much do web developers</h5></a>
@@ -206,7 +213,7 @@
                         <div class="post-details021"> <a href="#"><h5>How much do web developers</h5></a>
                             <p>I am thinking of pursuing web developing as a career & was ...</p> <small style="color: #848991">July 16, 2017</small> </div>
                     </div>
-                    <!--       end recent post    -->
+                    <!--       end Ultime news    -->
                 </aside>
             </div>
         </div>
