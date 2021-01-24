@@ -1,8 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%  String ut=(String) request.getSession().getAttribute("username");
+   Boolean adm= (Boolean) session.getAttribute("adminRoles");
+   %>
+   
+   <% ArrayList<String> videogiochi = (ArrayList<String>)request.getAttribute("videogiochi"); %>
+   
+   <% ArrayList<PubblicationBean> topicListV = (ArrayList<PubblicationBean>) request.getAttribute("topicListV"); %>
+
 <!DOCTYPE html>
 <html lang="it">
+<%@ page contentType="text/html; charset=ISO-8859-1" import="java.util.*, java.util.ArrayList, model.PubblicationBean"%>
 
+<% if(videogiochi==null){
+	
+	response.sendRedirect("./TopicServlet");	
+	return;
+	
+}	%>
+
+<% if(topicListV==null){
+	
+	response.sendRedirect("./TopicServlet");	
+	return;
+	
+}	%>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -107,21 +130,24 @@
                     <div id="main">
                         <input id="tab1" type="radio" name="tabs" checked>
                         <label for="tab1">Topic</label>
-                        <input id="tab2" type="radio" name="tabs">
-                        <label for="tab2">Videogioco
-                            <input list="browsers" name="myBrowser" class="list-category533"/>
-                        </label>
-                        <datalist id="browsers">
-                            <option value="Front_End Web Developer">
-                            <option value="Back-End develoer">
-                            <option value="Andriod Developer">
-                            <option value="Web Application">
-                            <option value="System Analyst">
-                            <option value="Security">
+                        
+                        <form class="form-inline" action="TopicServlet" method="post">
+                    	<div class="form-group">
+                        <label>Videogioco</label>
+                        <input list="videogiochi" name="videogioco" class="list-category533" />
+                        <datalist id="videogiochi">
+                            <%for(String s: videogiochi){ %>
+                            
+                                <option value="<%= s %>">
+                                
+                                <% } %>
                         </datalist>
+                        </div>
+                        	<input class="btn btn-default" type = "submit" value="Filtra"/>
+                        </form>
                                                 
                         <section id="content1">
-                               <!--Recent Question Content Section -->
+                               <%for(PubblicationBean p: topicListV){ %>
                                <div class="question-type2033">
                                 <div class="row">
                                     <div class="col-md-1">
@@ -132,188 +158,28 @@
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <span class="label utente">&#128100 NomeUtente</span>
-                                                <span class="label videogioco">&#127918 TitoloVideogioco</span>
-                                                <h3><a href="topicDetails.jsp" target="_self">Titolo Primo Topic</a></h3> </div>
+                                                <span class="label utente">&#128100 <%=p.getAutore() %></span>
+                                                <span class="label videogioco">&#127918 <%=p.getVideogioco() %></span>
+                                                <h3><a href="topicDetails.jsp" target="_self"><%=p.getTitolo() %></a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                <p><%=p.getDescrizione() %></p>
                                             </div>
                                             <hr>
-                                           <div class="clockcomment"> &#128336 Ultimo commento: 15/01/2021 10:58</div>
+                                           <div class="clockcomment"> &#128336 Data: <%=p.getData() %></div>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="ques-type302">
                                                 <br>
                                                 <br>
-                                                <span class="label like">&#128077 333</span>
+                                                <span class="label like">&#128077 <%=p.getNumMiPiace() %></span>
                                                 <hr>
                                                 <span class="label comment">&#128172 333</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        
-                           <!--Most Response Content Section -->
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <span class="label utente">&#128100 NomeUtente</span>
-                                                <span class="label videogioco">&#127918 TitoloVideogioco</span>
-                                                <h3><a href="topicDetails.jsp" target="_self">Titolo Primo Topic</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                        <div class="clockcomment"> &#128336 Ultimo commento: 15/01/2021 10:58</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                                <br>
-                                                <br>
-                                                <span class="label like">&#128077 333</span>
-                                                <hr>
-                                                <span class="label comment">&#128172 333</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <span class="label utente">&#128100 NomeUtente</span>
-                                                <span class="label videogioco">&#127918 TitoloVideogioco</span>
-                                                <h3><a href="topicDetails.jsp" target="_self">Titolo Primo Topic</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                           <div class="clockcomment"> &#128336 Ultimo commento: 15/01/2021 10:58</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                                <br>
-                                                <br>
-                                                <span class="label like">&#128077 333</span>
-                                                <hr>
-                                                <span class="label comment">&#128172 333</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                              
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <span class="label utente">&#128100 NomeUtente</span>
-                                                <span class="label videogioco">&#127918 TitoloVideogioco</span>
-                                                <h3><a href="topicDetails.jsp" target="_self">Titolo Primo Topic</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                           <div class="clockcomment"> &#128336 Ultimo commento: 15/01/2021 10:58</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                                <br>
-                                                <br>
-                                                <span class="label like">&#128077 333</span>
-                                                <hr>
-                                                <span class="label comment">&#128172 333</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <span class="label utente">&#128100 NomeUtente</span>
-                                                <span class="label videogioco">&#127918 TitoloVideogioco</span>
-                                                <h3><a href="topicDetails.jsp" target="_self">Titolo Primo Topic</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                           <div class="clockcomment"> &#128336 Ultimo commento: 15/01/2021 10:58</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                                <br>
-                                                <br>
-                                                <span class="label like">&#128077 333</span>
-                                                <hr>
-                                                <span class="label comment">&#128172 333</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <span class="label utente">&#128100 NomeUtente</span>
-                                                <span class="label videogioco">&#127918 TitoloVideogioco</span>
-                                                <h3><a href="topicDetails.jsp" target="_self">Titolo Primo Topic</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                           <div class="clockcomment"> &#128336 Ultimo commento: 15/01/2021 10:58</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                                <br>
-                                                <br>
-                                                <span class="label like">&#128077 333</span>
-                                                <hr>
-                                                <span class="label comment">&#128172 333</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <%}%>
                         </section>
                     </div>
                 </div>

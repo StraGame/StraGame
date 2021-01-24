@@ -106,13 +106,56 @@ public class PubblicationDto implements PubblicationDao {
 				}
 			}
 		}
-
-		
-		
-		
 		
 	}
 
+		public ArrayList<PubblicationBean> getPubsByTipo(String tipo) throws SQLException {
+			Connection conn=null;
+			PreparedStatement statement=null;
+			
+			ArrayList<PubblicationBean> l=null;
+			
+			String selectSQL = "SELECT * FROM " + "pubblication" + " WHERE tipo = ?";
+			
+			try {
+				conn=ds.getConnection();
+				statement=conn.prepareStatement(selectSQL);
+				statement.setString(1, tipo);
+				
+				ResultSet rs=statement.executeQuery();
+				
+				l=new ArrayList<PubblicationBean>();
+				
+				while(rs.next()) {
+					PubblicationBean p=new PubblicationBean();
+					p.setCodicePubblicazione(rs.getInt(1));
+					p.setAutore(rs.getString(2));
+					p.setTitolo(rs.getString(3));
+					p.setDescrizione(rs.getString(4));
+					p.setNumMiPiace(rs.getInt(5));
+					p.setVideogioco(rs.getString(6));
+					p.setData(rs.getString(7));
+					p.setGameplay(rs.getInt(9));
+					p.setTrama(rs.getInt(10));
+					p.setGrafica(rs.getInt(11));
+					p.setVoto(rs.getInt(12));
+
+					l.add(p);
+				}
+			}
+			finally {
+				try {
+					if (statement != null)
+						statement.close();
+				} finally {
+					if (conn != null)
+						conn.close();
+				}
+			return l;
+			}
+			
+		}
+		
 	@Override
 	public void removePubblication(int id) throws SQLException {
 
@@ -244,5 +287,62 @@ public class PubblicationDto implements PubblicationDao {
 		
 		return l;
 	}
+	
+	@Override
+	public ArrayList<PubblicationBean> getAllPubFilter(String videogioco,String tipo) throws SQLException{
+		
+		if(videogioco==null) {
+			return this.getPubsByTipo(tipo);
+		}
+		
+		else if(!"".equals(videogioco)) {
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
+			
+			ArrayList<PubblicationBean> l=new ArrayList<PubblicationBean>();
+			
+			String selectSQL = "SELECT * FROM " + "pubblication" + " WHERE videogioco = ? AND tipo=?";
+			
+			try {
+				connection = ds.getConnection();
+				preparedStatement = connection.prepareStatement(selectSQL);
+				preparedStatement.setString(1, videogioco);
+				preparedStatement.setString(2, tipo);
+				
+				ResultSet rs = preparedStatement.executeQuery();
+				
+				while(rs.next()) {
+					
+					PubblicationBean p=new PubblicationBean();
+					p.setCodicePubblicazione(rs.getInt(1));
+					p.setAutore(rs.getString(2));
+					p.setTitolo(rs.getString(3));
+					p.setDescrizione(rs.getString(4));
+					p.setNumMiPiace(rs.getInt(5));
+					p.setVideogioco(rs.getString(6));
+					p.setData(rs.getString(7));
+					p.setGameplay(rs.getInt(9));
+					p.setTrama(rs.getInt(10));
+					p.setGrafica(rs.getInt(11));
+					p.setVoto(rs.getInt(12));
+					
+					l.add(p);
+				}
+			}finally {
+				try {
+					if (preparedStatement != null)
+						preparedStatement.close();
+				} finally {
+					if (connection != null)
+						connection.close();
+				}
+			}
+			return l;
+		}
+		else {
+			return this.getPubsByTipo(tipo);
+		}
+	}
+
 
 }
