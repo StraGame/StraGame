@@ -81,10 +81,10 @@
       ><path d="M-7 -7 L139 -7 L139 79 L-7 79 L-7 -7 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath26"
-      ><path d="M0 0 L0 15 L128 15 L128 0 Z"
+      ><path d="M0 0 L0 53 L128 53 L128 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath27"
-      ><path d="M0 0 L0 53 L128 53 L128 0 Z"
+      ><path d="M0 0 L0 15 L128 15 L128 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath28"
       ><path d="M-7 -7 L173 -7 L173 78 L-7 78 L-7 -7 Z"
@@ -148,6 +148,10 @@
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath4)" stroke="none"
       >+DoPost()</text
     ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,18,67)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath4)" stroke="none"
+      >+DoGet()</text
+    ></g
     ><g font-size="11px" transform="translate(18,52)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="15" xml:space="preserve" y="12" clip-path="url(#clipPath5)" stroke="none"
       >LoginServlet</text
@@ -162,6 +166,10 @@
     ><g font-size="11px" transform="matrix(1,0,0,1,140,67)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath4)" stroke="none"
       >+DoPost()</text
+    ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,140,67)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath4)" stroke="none"
+      >+DoGet()</text
     ></g
     ><g font-size="11px" transform="translate(140,52)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="15" xml:space="preserve" y="12" clip-path="url(#clipPath5)" stroke="none"
@@ -178,6 +186,10 @@
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath7)" stroke="none"
       >+DoPost()</text
     ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,268,67)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath7)" stroke="none"
+      >+DoGet()</text
+    ></g
     ><g font-size="11px" transform="translate(268,52)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="7" xml:space="preserve" y="12" clip-path="url(#clipPath8)" stroke="none"
       >PubblicationServlet</text
@@ -192,6 +204,14 @@
     ><g font-size="11px" transform="matrix(1,0,0,1,409,67)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath10)" stroke="none"
       >+DoPost()</text
+    ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,409,67)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath10)" stroke="none"
+      >+DoGet()</text
+    ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,409,67)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="44" clip-path="url(#clipPath10)" stroke="none"
+      >+ExtractFileName()</text
     ></g
     ><g font-size="11px" transform="translate(409,52)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="27" xml:space="preserve" y="12" clip-path="url(#clipPath8)" stroke="none"
@@ -208,6 +228,10 @@
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath12)" stroke="none"
       >+DoPost()</text
     ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,17,160)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath12)" stroke="none"
+      >+DoGet()</text
+    ></g
     ><g font-size="11px" transform="translate(17,145)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="10" xml:space="preserve" y="12" clip-path="url(#clipPath13)" stroke="none"
       >BlackListServlet</text
@@ -222,6 +246,10 @@
     ><g font-size="11px" transform="matrix(1,0,0,1,147,160)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath15)" stroke="none"
       >+DoPost()</text
+    ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,147,160)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath15)" stroke="none"
+      >+DoGet()</text
     ></g
     ><g font-size="11px" transform="translate(147,145)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="17" xml:space="preserve" y="12" clip-path="url(#clipPath16)" stroke="none"
@@ -238,6 +266,10 @@
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath15)" stroke="none"
       >+DoPost()</text
     ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,274,160)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath15)" stroke="none"
+      >+DoGet()</text
+    ></g
     ><g font-size="11px" transform="translate(274,145)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="15" xml:space="preserve" y="12" clip-path="url(#clipPath16)" stroke="none"
       >RegisterServlet</text
@@ -252,6 +284,10 @@
     ><g font-size="11px" transform="matrix(1,0,0,1,12,251)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath18)" stroke="none"
       >+DoPost()</text
+    ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,12,251)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath18)" stroke="none"
+      >+DoGet()</text
     ></g
     ><g font-size="11px" transform="translate(12,236)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="25" xml:space="preserve" y="12" clip-path="url(#clipPath16)" stroke="none"
@@ -268,6 +304,10 @@
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath20)" stroke="none"
       >+DoPost()</text
     ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,134,251)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath20)" stroke="none"
+      >+DoGet()</text
+    ></g
     ><g font-size="11px" transform="translate(134,236)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="10" xml:space="preserve" y="12" clip-path="url(#clipPath21)" stroke="none"
       >ReportPubblication</text
@@ -283,6 +323,10 @@
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath23)" stroke="none"
       >+DoPost()</text
     ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,275,251)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath23)" stroke="none"
+      >+DoGet()</text
+    ></g
     ><g font-size="11px" transform="translate(275,236)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="7" xml:space="preserve" y="12" clip-path="url(#clipPath24)" stroke="none"
       >VideoGameServlet</text
@@ -294,13 +338,17 @@
     ><rect fill="none" x="0" width="128" height="68" y="0" clip-path="url(#clipPath25)"
       /><line y2="15" fill="none" x1="0" clip-path="url(#clipPath25)" x2="128" y1="15"
     /></g
-    ><g font-size="11px" transform="translate(409,145)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
-    ><text x="19" xml:space="preserve" y="12" clip-path="url(#clipPath26)" stroke="none"
-      >BugDetailServlet</text
+    ><g font-size="11px" transform="matrix(1,0,0,1,409,160)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath26)" stroke="none"
+      >+DoPost()</text
     ></g
     ><g font-size="11px" transform="matrix(1,0,0,1,409,160)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
-    ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath27)" stroke="none"
-      >+DoPost()</text
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath26)" stroke="none"
+      >+DoGet()</text
+    ></g
+    ><g font-size="11px" transform="translate(409,145)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
+    ><text x="19" xml:space="preserve" y="12" clip-path="url(#clipPath27)" stroke="none"
+      >BugDetailServlet</text
     ></g
     ><g font-size="11px" transform="translate(12,318)" fill-opacity="1" fill="rgb(122,207,245)" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="rgb(122,207,245)" font-weight="bold" stroke-opacity="1"
     ><rect x="0" width="162" height="67" y="0" clip-path="url(#clipPath28)" stroke="none"
@@ -312,6 +360,10 @@
     ><g font-size="11px" transform="matrix(1,0,0,1,12,333)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath29)" stroke="none"
       >+DoPost()</text
+    ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,12,333)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath29)" stroke="none"
+      >+DoGet()</text
     ></g
     ><g font-size="11px" transform="translate(12,318)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="16" xml:space="preserve" y="12" clip-path="url(#clipPath30)" stroke="none"
@@ -328,6 +380,10 @@
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath4)" stroke="none"
       >+DoPost()</text
     ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,215,333)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath4)" stroke="none"
+      >+DoGet()</text
+    ></g
     ><g font-size="11px" transform="translate(215,318)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="23" xml:space="preserve" y="12" clip-path="url(#clipPath5)" stroke="none"
       >GetPhoto</text
@@ -342,6 +398,10 @@
     ><g font-size="11px" transform="matrix(1,0,0,1,354,333)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath4)" stroke="none"
       >+DoPost()</text
+    ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,354,333)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath4)" stroke="none"
+      >+DoGet()</text
     ></g
     ><g font-size="11px" transform="translate(354,318)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="15" xml:space="preserve" y="12" clip-path="url(#clipPath5)" stroke="none"
@@ -358,6 +418,10 @@
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath32)" stroke="none"
       >+DoPost()</text
     ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,477,333)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath32)" stroke="none"
+      >+DoGet()</text
+    ></g
     ><g font-size="11px" transform="translate(477,318)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="21" xml:space="preserve" y="12" clip-path="url(#clipPath33)" stroke="none"
       >ListReportPubblicationServlet</text
@@ -372,6 +436,10 @@
     ><g font-size="11px" transform="matrix(1,0,0,1,12,428)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath35)" stroke="none"
       >+DoPost()</text
+    ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,12,428)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath35)" stroke="none"
+      >+DoGet()</text
     ></g
     ><g font-size="11px" transform="translate(12,413)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="51" xml:space="preserve" y="12" clip-path="url(#clipPath36)" stroke="none"
@@ -388,10 +456,6 @@
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath35)" stroke="none"
       >+DoPost()</text
     ></g
-    ><g font-size="11px" transform="matrix(1,0,0,1,239,427)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
-    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath35)" stroke="none"
-      >+DoGet()</text
-    ></g
     ><g font-size="11px" transform="translate(239,412)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="46" xml:space="preserve" y="12" clip-path="url(#clipPath36)" stroke="none"
       >NewNewsServlet</text
@@ -403,13 +467,17 @@
     ><rect fill="none" x="0" width="183" height="56" y="0" clip-path="url(#clipPath34)"
       /><line y2="15" fill="none" x1="0" clip-path="url(#clipPath34)" x2="183" y1="15"
     /></g
-    ><g font-size="11px" transform="translate(452,412)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
-    ><text x="42" xml:space="preserve" y="12" clip-path="url(#clipPath36)" stroke="none"
-      >NewReviewServlet</text
-    ></g
     ><g font-size="11px" transform="matrix(1,0,0,1,452,427)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath35)" stroke="none"
       >+DoPost()</text
+    ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,452,427)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath35)" stroke="none"
+      >+DoGet()</text
+    ></g
+    ><g font-size="11px" transform="translate(452,412)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
+    ><text x="42" xml:space="preserve" y="12" clip-path="url(#clipPath36)" stroke="none"
+      >NewReviewServlet</text
     ></g
     ><g font-size="11px" transform="translate(12,497)" fill-opacity="1" fill="rgb(122,207,245)" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="rgb(122,207,245)" font-weight="bold" stroke-opacity="1"
     ><rect x="0" width="183" height="56" y="0" clip-path="url(#clipPath34)" stroke="none"
@@ -421,6 +489,10 @@
     ><g font-size="11px" transform="matrix(1,0,0,1,12,512)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath35)" stroke="none"
       >+DoPost()</text
+    ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,12,512)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath35)" stroke="none"
+      >+DoGet()</text
     ></g
     ><g font-size="11px" transform="translate(12,497)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="47" xml:space="preserve" y="12" clip-path="url(#clipPath36)" stroke="none"
@@ -437,6 +509,10 @@
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath35)" stroke="none"
       >+DoPost()</text
     ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,226,512)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath35)" stroke="none"
+      >+DoGet()</text
+    ></g
     ><g font-size="11px" transform="translate(226,497)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="39" xml:space="preserve" y="12" clip-path="url(#clipPath36)" stroke="none"
       >ReportDetailServlet</text
@@ -451,6 +527,10 @@
     ><g font-size="11px" transform="matrix(1,0,0,1,452,510)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath38)" stroke="none"
       >+DoPost()</text
+    ></g
+    ><g font-size="11px" transform="matrix(1,0,0,1,452,510)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath38)" stroke="none"
+      >+DoGet()</text
     ></g
     ><g font-size="11px" transform="translate(452,495)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
     ><text x="50" xml:space="preserve" y="12" clip-path="url(#clipPath39)" stroke="none"
