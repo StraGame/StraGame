@@ -4,9 +4,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,18 +17,23 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
 import control.NewBugServlet;
+import model.BugBean;
+import model.BugDao;
+import model.BugDto;
 
 class TestNewBugServlet {
 
 	private MockHttpServletRequest request;
 	private MockHttpServletResponse response;
 	private NewBugServlet servlet;
+	private BugDao bugdto;
 	
 	@BeforeEach
 	void setUp() throws Exception {
 		request=new MockHttpServletRequest();
 		response=new MockHttpServletResponse();
 		servlet=new NewBugServlet();
+		BugDao bugdto = new BugDto();
 	}
 
 	@Test
@@ -259,5 +267,20 @@ class TestNewBugServlet {
 	    servlet = null;
 	    request = null;    
 	    response = null;
+	    
+	}
+	
+	@AfterAll
+	public void restoreData () {
+	
+	try {
+		ArrayList<BugBean> list = bugdto.getAllBug();
+		int id =list.get(list.size()-1).getCodicebug();
+		bugdto.removeBug(id);
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+    
 	}
 }
