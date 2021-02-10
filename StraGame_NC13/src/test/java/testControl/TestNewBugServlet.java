@@ -1,10 +1,12 @@
 package testControl;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.Assert.assertThrows;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -13,6 +15,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
@@ -21,19 +24,21 @@ import model.BugBean;
 import model.BugDao;
 import model.BugDto;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class TestNewBugServlet {
 
 	private MockHttpServletRequest request;
 	private MockHttpServletResponse response;
 	private NewBugServlet servlet;
-	private BugDao bugdto;
+	private BugDao bugdto= new BugDto();
+	private LocalDateTime oggi;
+	private DateTimeFormatter sdf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); 
 	
 	@BeforeEach
 	void setUp() throws Exception {
 		request=new MockHttpServletRequest();
 		response=new MockHttpServletResponse();
 		servlet=new NewBugServlet();
-		BugDao bugdto = new BugDto();
 	}
 
 	@Test
@@ -258,7 +263,8 @@ class TestNewBugServlet {
 		request.addParameter("categoria", "Bug Grafico");
 		request.addParameter("videogioco", "The Crew 2");
 		request.addParameter("descrizione", "Descrizione del Bug grafico");
-
+		oggi = LocalDateTime.now();
+		
 		servlet.doPost(request,response);
 	}
 	
@@ -268,19 +274,24 @@ class TestNewBugServlet {
 	    request = null;    
 	    response = null;
 	    
+	    
 	}
 	
 	@AfterAll
-	public void restoreData () {
-	
-	try {
-		ArrayList<BugBean> list = bugdto.getAllBug();
-		int id =list.get(list.size()-1).getCodicebug();
-		bugdto.removeBug(id);
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-    
+	public void restore() {
+		try {
+			ArrayList<BugBean> list = bugdto.getAllBug();
+			for(BugBean b: list) {
+				if(b.getData().equals(oggi.format(sdf))) {
+					System.out.println(b.getCodicebug());
+					bugdto.removeBug(b.getCodicebug());
+				}
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
+
