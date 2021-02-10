@@ -43,7 +43,7 @@ class TestNewTopicServlet {
 		
 		request.addParameter("titolo", "");
 		request.addParameter("action", "insert");
-		request.getSession().setAttribute("username","user");
+		request.getSession().setAttribute("username","vincenzoStrano");
 		 String message = "Il titolo non rispetta la lunghezza";
 		    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {      
 		      servlet.doPost(request, response);
@@ -56,7 +56,7 @@ class TestNewTopicServlet {
 			
 			request.addParameter("titolo", "tit");
 			request.addParameter("action", "insert");
-			request.getSession().setAttribute("username","user");
+			request.getSession().setAttribute("username","vincenzoStrano");
 			 String message = "Il titolo non rispetta la lunghezza";
 			    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {      
 			      servlet.doPost(request, response);
@@ -77,7 +77,7 @@ class TestNewTopicServlet {
 			
 			request.addParameter("titolo", "titolo troppo lungo mi aspetto un'eccezione brutta");
 			request.addParameter("action", "insert");
-			request.getSession().setAttribute("username","user");
+			request.getSession().setAttribute("username","vincenzoStrano");
 			 String message = "Il titolo non rispetta la lunghezza";
 			    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {      
 			      servlet.doPost(request, response);
@@ -90,7 +90,7 @@ class TestNewTopicServlet {
 			
 			request.addParameter("titolo", "**123**");
 			request.addParameter("action", "insert");
-			request.getSession().setAttribute("username","user");
+			request.getSession().setAttribute("username","vincenzoStrano");
 			 String message = "Il titolo non rispetta il formato";
 			    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {      
 			      servlet.doPost(request, response);
@@ -104,7 +104,7 @@ class TestNewTopicServlet {
 			request.addParameter("titolo", "titolo topic");
 			request.addParameter("action", "insert");
 			request.addParameter("videogioco","");
-			request.getSession().setAttribute("username","user");
+			request.getSession().setAttribute("username","vincenzoStrano");
 			 String message = "Il videogioco non rispetta la lunghezza";
 			    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {      
 			      servlet.doPost(request, response);
@@ -119,7 +119,7 @@ class TestNewTopicServlet {
 			request.addParameter("titolo", "titolo topic");
 			request.addParameter("action", "insert");
 			request.addParameter("videogioco","t");
-			request.getSession().setAttribute("username","user");
+			request.getSession().setAttribute("username","vincenzoStrano");
 			 String message = "Il videogioco non rispetta la lunghezza";
 			    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {      
 			      servlet.doPost(request, response);
@@ -133,7 +133,7 @@ class TestNewTopicServlet {
 			request.addParameter("titolo", "titolo topic");
 			request.addParameter("action", "insert");
 			request.addParameter("videogioco","titolo videogioco troppo lungo, mi aspetto una brutta eccezione");
-			request.getSession().setAttribute("username","user");
+			request.getSession().setAttribute("username","vincenzoStrano");
 			 String message = "Il videogioco non rispetta la lunghezza";
 			    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {      
 			      servlet.doPost(request, response);
@@ -147,7 +147,7 @@ class TestNewTopicServlet {
 			request.addParameter("titolo", "titolo topic");
 			request.addParameter("action", "insert");
 			request.addParameter("videogioco","&&nomegioco&&");
-			request.getSession().setAttribute("username","user");
+			request.getSession().setAttribute("username","vincenzoStrano");
 			 String message = "Il videogioco non rispetta il formato";
 			    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {      
 			      servlet.doPost(request, response);
@@ -162,7 +162,7 @@ class TestNewTopicServlet {
 			request.addParameter("titolo", "titolo topic");
 			request.addParameter("action", "insert");
 			request.addParameter("videogioco","minecraft");
-			request.getSession().setAttribute("username","user");
+			request.getSession().setAttribute("username","vincenzoStrano");
 			 String message = "Il videogioco non esiste all'interno del db";
 			    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {      
 			      servlet.doPost(request, response);
@@ -178,7 +178,7 @@ class TestNewTopicServlet {
 			request.addParameter("action", "insert");
 			request.addParameter("videogioco","The Crew 2");
 			request.addParameter("descrizione", "");
-			request.getSession().setAttribute("username","user");
+			request.getSession().setAttribute("username","vincenzoStrano");
 			String message = "La descrizione non rispetta la lunghezza";
 			    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {      
 			      servlet.doPost(request, response);
@@ -194,7 +194,7 @@ class TestNewTopicServlet {
 			request.addParameter("action", "insert");
 			request.addParameter("videogioco","The Crew 2");
 			request.addParameter("descrizione", "Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere. Questa descrizione deve avere 2000 caratteri, ma non so che scrivere.");
-			request.getSession().setAttribute("username","user");
+			request.getSession().setAttribute("username","vincenzoStrano");
 			String message = "La descrizione non rispetta la lunghezza";
 			    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {      
 			      servlet.doPost(request, response);
@@ -209,10 +209,10 @@ class TestNewTopicServlet {
 			request.addParameter("action", "insert");
 			request.addParameter("videogioco","Anno 1800");
 			request.addParameter("descrizione", "descrizione topic");
+			request.getSession().setAttribute("username","vincenzoStrano");
 			byte[] b = new byte[20];
 		    MockPart part = new MockPart("photo", "", b);
 		    request.addPart(part);
-			request.getSession().setAttribute("username","user");
 		    servlet.doPost(request, response);
 			
 		}
@@ -231,6 +231,7 @@ class TestNewTopicServlet {
 		    response = null;
 		}
 		
+	 
 		@AfterAll
 		public void restoreData() {
 			
@@ -238,7 +239,7 @@ class TestNewTopicServlet {
 				ArrayList<PubblicationBean> list = pubblicationdto.getAllPubblication();
 				for(PubblicationBean b : list ) {
 					
-					if(b.getTitolo().equals("titolo recensione")){
+					if(b.getTitolo().equals("titolo topic")){
 						
 						pubblicationdto.removePubblication(b.getCodicePubblicazione());
 					}
@@ -249,5 +250,6 @@ class TestNewTopicServlet {
 			}
 			
 		}
+		
 	
 }

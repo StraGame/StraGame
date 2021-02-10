@@ -369,7 +369,7 @@ class TestRegisterServlet {
 	try {
 		UserBean user = userdto.retrieveUser("Mariomaff");
 		if(user.getNickname().equals("Mariomaff")) {
-		userdto.removeUser("MarioMaff");
+		  userdto.removeUser("MarioMaff");
 		}
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
