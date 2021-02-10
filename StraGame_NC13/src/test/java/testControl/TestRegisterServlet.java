@@ -1,8 +1,7 @@
 package testControl;
 
 import static org.junit.Assert.assertEquals;
-
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.sql.SQLException;
 import org.junit.jupiter.api.AfterEach;
@@ -185,7 +184,7 @@ class TestRegisterServlet {
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "adm12345");
 				
-		String oracle="L'username già è presente all'interno del db";
+		String oracle="L'username giï¿½ ï¿½ presente all'interno del db";
 		
 		IllegalArgumentException exception= assertThrows(IllegalArgumentException.class,() -> {
 			servlet.doPost(request,response);

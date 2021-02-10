@@ -1,7 +1,7 @@
 package testControl;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -167,7 +167,7 @@ class TestVideoGameServlet {
 		request.addParameter("titolo", "Final Fantasy 7");
 		request.addParameter("action", "insert");
 		request.addParameter("genere", "picchiaduro");
-		request.addParameter("descrizione","Final Fantasy 7 è un gioco di simulazione.");
+		request.addParameter("descrizione","Final Fantasy 7 ï¿½ un gioco di simulazione.");
 		byte[] b = new byte[20];
 	    MockPart part = new MockPart("photo", "", b);
 	    request.addPart(part);

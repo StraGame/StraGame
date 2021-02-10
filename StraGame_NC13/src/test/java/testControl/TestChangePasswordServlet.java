@@ -1,7 +1,7 @@
 package testControl;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.sql.SQLException;
 
@@ -71,7 +71,7 @@ class TestChangePasswordServlet {
 	@Test
 	public void TC_2_2_2() {
 		request.getSession().setAttribute("username", "adm12345");
-		request.addParameter("oldpassword", "Ciao12£*.");
+		request.addParameter("oldpassword", "Ciao12ï¿½*.");
 		
 		String oracle="La vecchia password non rispetta il formato";
 		
@@ -86,7 +86,7 @@ class TestChangePasswordServlet {
 		request.getSession().setAttribute("username", "adm12345");
 		request.addParameter("oldpassword", "ciao1235");
 		
-		String oracle="La vecchia password non è corretta";
+		String oracle="La vecchia password non ï¿½ corretta";
 		
 		IllegalArgumentException exception= assertThrows(IllegalArgumentException.class,() -> {
 			servlet.doPost(request,response);

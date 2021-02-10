@@ -1,7 +1,7 @@
 package testControl;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -55,7 +55,7 @@ class TestReportPubblicationServlet {
 		request.addParameter("action","insert");
 		request.addParameter("id", "3240");
 		request.getSession().setAttribute("username","adm12345");
-		request.addParameter("testo", "devo scrivere più di 300 caratteri, non so che scrivere quindi ricopio. devo scrivere più di 300 caratteri, non so che scrivere quindi ricopio. devo scrivere più di 300 caratteri, non so che scrivere quindi ricopio. devo scrivere più di 300 caratteri, non so che scrivere quindi ricopio. devo scrivere più di 300 caratteri, non so che scrivere quindi ricopio.");
+		request.addParameter("testo", "devo scrivere piï¿½ di 300 caratteri, non so che scrivere quindi ricopio. devo scrivere piï¿½ di 300 caratteri, non so che scrivere quindi ricopio. devo scrivere piï¿½ di 300 caratteri, non so che scrivere quindi ricopio. devo scrivere piï¿½ di 300 caratteri, non so che scrivere quindi ricopio. devo scrivere piï¿½ di 300 caratteri, non so che scrivere quindi ricopio.");
 		
 		String oracle="Il testo non rispetta la lunghezza";
 		
@@ -103,7 +103,7 @@ class TestReportPubblicationServlet {
 		request.addParameter("id", "3240");
 		request.getSession().setAttribute("username","adm12345");
 		request.addParameter("testo", "Testo della segnalazione");
-		request.addParameter("categoria", "Questa categoria deve essere lunga più di quarantacinque caratteri");
+		request.addParameter("categoria", "Questa categoria deve essere lunga piï¿½ di quarantacinque caratteri");
 		
 		String oracle="La categoria non rispetta la lunghezza";
 		

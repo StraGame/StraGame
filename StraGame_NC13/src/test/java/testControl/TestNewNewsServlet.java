@@ -1,7 +1,7 @@
 package testControl;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.IOException;
 
@@ -114,7 +114,7 @@ class TestNewNewsServlet {
 		request.addParameter("action", "insert");
 		request.addParameter("titolo", "Nuova news");
 		request.getSession().setAttribute("username","adm12345");
-		request.addParameter("descrizione", "Questa è la descrizione");
+		request.addParameter("descrizione", "Questa ï¿½ la descrizione");
 		byte[] b = new byte[20];
 	    MockPart part = new MockPart("photo", "", b);
 	    request.addPart(part);
