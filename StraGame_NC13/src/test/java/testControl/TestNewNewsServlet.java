@@ -4,9 +4,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
-
+import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,12 +18,16 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.mock.web.MockPart;
 
 import control.NewNewsServlet;
-
+import model.NewsBean;
+import model.NewsDao;
+import model.NewsDto;
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class TestNewNewsServlet {
 
 	private MockHttpServletRequest request;
 	private NewNewsServlet servlet;
 	private MockHttpServletResponse response;
+	private NewsDao newsdto = new NewsDto();
 	
 	@BeforeEach
 	public void setUp() throws Exception {
@@ -115,7 +121,7 @@ class TestNewNewsServlet {
 		request.addParameter("action", "insert");
 		request.addParameter("titolo", "Nuova news");
 		request.getSession().setAttribute("username","adm12345");
-		request.addParameter("descrizione", "Questa � la descrizione");
+		request.addParameter("descrizione", "Questa è la descrizione");
 		byte[] b = new byte[20];
 	    MockPart part = new MockPart("photo", "", b);
 	    request.addPart(part);
@@ -138,6 +144,20 @@ class TestNewNewsServlet {
 	@AfterAll
 	public void restoreData() {
 		
+		try {
+			ArrayList<NewsBean> list = newsdto.getAllNews();
+			for(NewsBean b: list) {
+				
+				if(b.getTitolo().equals("Nuova news")) {
+					
+					newsdto.removeNews(b.getCodiceNews());
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+	
 
 }

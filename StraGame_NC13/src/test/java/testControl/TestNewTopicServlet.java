@@ -3,22 +3,31 @@ package testControl;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.mock.web.MockPart;
 
 import control.NewTopicServlet;
-
+import model.PubblicationBean;
+import model.PubblicationDao;
+import model.PubblicationDto;
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class TestNewTopicServlet {
 	
 	private NewTopicServlet servlet;
 	private MockHttpServletRequest request;
 	private MockHttpServletResponse response;
+	private PubblicationDao pubblicationdto = new PubblicationDto();
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -215,5 +224,30 @@ class TestNewTopicServlet {
 		 servlet.doPost(request, response);
 		 
 	  }
+	 @AfterEach
+		public void tearDown() {
+		    servlet = null;
+		    request = null;    
+		    response = null;
+		}
+		
+		@AfterAll
+		public void restoreData() {
+			
+			try {
+				ArrayList<PubblicationBean> list = pubblicationdto.getAllPubblication();
+				for(PubblicationBean b : list ) {
+					
+					if(b.getTitolo().equals("titolo recensione")){
+						
+						pubblicationdto.removePubblication(b.getCodicePubblicazione());
+					}
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 	
 }

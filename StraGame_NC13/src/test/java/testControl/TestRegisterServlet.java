@@ -4,18 +4,20 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.sql.SQLException;
+
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
 import control.RegisterServlet;
-
+import model.UserBean;
 import model.UserDao;
 import model.UserDto;
-
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class TestRegisterServlet {
 
 	private MockHttpServletRequest request;
@@ -358,12 +360,21 @@ class TestRegisterServlet {
 	    servlet = null;
 	    request = null;    
 	    response = null;
-	    try {
-			userdto.removeUser("Mariomaff");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	 
 	  }
+	
+	@AfterAll
+	public void restoreData() {
+		
+	try {
+		UserBean user = userdto.retrieveUser("Mariomaff");
+		if(user.getNickname().equals("Mariomaff")) {
+		userdto.removeUser("MarioMaff");
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	}
 
 }
