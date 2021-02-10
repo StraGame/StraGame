@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -132,6 +133,11 @@ class TestNewNewsServlet {
 	    servlet = null;
 	    request = null;    
 	    response = null;
+	}
+	
+	@AfterAll
+	public void restoreData() {
+		
 	}
 
 }
