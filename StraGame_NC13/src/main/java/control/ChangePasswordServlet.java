@@ -49,6 +49,8 @@ public class ChangePasswordServlet extends HttpServlet {
     String oldpassword = (String) request.getParameter("oldpassword");
     String newpassword = (String) request.getParameter("newpassword");
     String repeatpassword = (String) request.getParameter("repeatpassword");
+    
+    System.out.println(oldpassword);
         
     if (oldpassword.length() == 0) {
       throw new IllegalArgumentException("La vecchia password non rispetta la lunghezza");
@@ -58,7 +60,7 @@ public class ChangePasswordServlet extends HttpServlet {
       throw new IllegalArgumentException("La vecchia password non rispetta la lunghezza");
     } else if (!oldpassword.matches("[a-zA-Z0-9 \']+")) {
       throw new IllegalArgumentException("La vecchia password non rispetta il formato");
-    }
+    } 
   
    if (newpassword.length() == 0) {
       throw new IllegalArgumentException("La nuova password non rispetta la lunghezza");
@@ -70,15 +72,21 @@ public class ChangePasswordServlet extends HttpServlet {
       throw new IllegalArgumentException("La nuova password non rispetta il formato");
     }
   	
+   
     if (!newpassword.equals(oldpassword)) {
       if(repeatpassword.equals(newpassword)) {
         try {
+        	if(userdto.retrieveUser(autore).getPassword().equals(oldpassword)) {
     	  userdto.editPassword(newpassword, autore);
     	  label="Password cambiata con successo";
+        	}
+        	else {
+        		label ="la vecchia password non è corretta";
+        	}
     	} catch (SQLException e) {
     	  // TODO Auto-generated catch block
     	  e.printStackTrace();
-    	  label="Password non � stata cambiata";
+    	  label="Password non è stata cambiata";
     				}
     			}
     			else {

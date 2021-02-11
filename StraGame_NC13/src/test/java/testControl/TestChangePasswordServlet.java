@@ -3,7 +3,10 @@ package testControl;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.io.IOException;
 import java.sql.SQLException;
+
+import javax.servlet.ServletException;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -71,7 +74,7 @@ class TestChangePasswordServlet {
 	@Test
 	public void TC_2_2_2() {
 		request.getSession().setAttribute("username", "adm12345");
-		request.addParameter("oldpassword", "Ciao12�*.");
+		request.addParameter("oldpassword", "Ciao12£*.");
 		
 		String oracle="La vecchia password non rispetta il formato";
 		
@@ -82,20 +85,19 @@ class TestChangePasswordServlet {
 	}
 	
 	@Test
-	public void TC_2_2_3() {
+	public void oldPasswordError() throws ServletException, IOException {
 		request.getSession().setAttribute("username", "adm12345");
 		request.addParameter("oldpassword", "ciao1235");
+		request.addParameter("newpassword", "ciao1235");
+		request.addParameter("repeatpassword", "ciao1235");
 		
-		String oracle="La vecchia password non � corretta";
-		
-		IllegalArgumentException exception= assertThrows(IllegalArgumentException.class,() -> {
-			servlet.doPost(request,response);
-		});
-		assertEquals(oracle,exception.getMessage());
+		String oracle="La vecchia password non è corretta";
+		servlet.doPost(request, response);
+		assertEquals(oracle,request.getAttribute("label"));
 	}
 	
 	@Test
-	public void TC_2_2_4() {
+	public void TC_2_2_3() {
 		request.getSession().setAttribute("username", "adm12345");
 		request.addParameter("oldpassword", "ciao1234");
 		request.addParameter("newpassword", "");
@@ -109,7 +111,7 @@ class TestChangePasswordServlet {
 	}
 	
 	@Test
-	public void TC_2_2_4_1() {
+	public void TC_2_2_3_1() {
 		request.getSession().setAttribute("username", "adm12345");
 		request.addParameter("oldpassword", "ciao1234");
 		request.addParameter("newpassword", "ciao");
@@ -123,7 +125,7 @@ class TestChangePasswordServlet {
 	}
 	
 	@Test
-	public void TC_2_2_4_2() {
+	public void TC_2_2_3_2() {
 		request.getSession().setAttribute("username", "adm12345");
 		request.addParameter("oldpassword", "ciao1234");
 		request.addParameter("newpassword", "ciaoooooooooooooooooooooooooooooooooooooooooooo");
@@ -137,7 +139,7 @@ class TestChangePasswordServlet {
 	}
 	
 	@Test
-	public void TC_2_2_5() {
+	public void TC_2_2_4() {
 		request.getSession().setAttribute("username", "adm12345");
 		request.addParameter("oldpassword", "ciao1234");
 		request.addParameter("newpassword", "ciao123&.!");
@@ -151,47 +153,33 @@ class TestChangePasswordServlet {
 	}
 	
 	@Test
-	public void TC_2_2_6() {
+	public void passwordMatchError() throws ServletException, IOException {
 		request.getSession().setAttribute("username", "adm12345");
 		request.addParameter("oldpassword", "ciao1234");
 		request.addParameter("newpassword", "ciao1234");
-		
 		String oracle="La nuova e la vecchia password coincidono";
-		
-		IllegalArgumentException exception= assertThrows(IllegalArgumentException.class,() -> {
-			servlet.doPost(request,response);
-		});
-		assertEquals(oracle,exception.getMessage());
+	    servlet.doPost(request,response);
+		assertEquals(oracle,request.getAttribute("label"));
 	}
 	
 	@Test
-	public void TC_2_2_7() {
+	public void passwordMismatch() throws ServletException, IOException {
 		request.getSession().setAttribute("username", "adm12345");
 		request.addParameter("oldpassword", "ciao1234");
 		request.addParameter("newpassword", "ciao1235");
 		request.addParameter("repeatpassword", "ciao1236");
-		
 		String oracle="La password ripetuta non coincide con la nuova password";
-		
-		IllegalArgumentException exception= assertThrows(IllegalArgumentException.class,() -> {
-			servlet.doPost(request,response);
-		});
-		assertEquals(oracle,exception.getMessage());
+		servlet.doPost(request,response);
+		assertEquals(oracle,request.getAttribute("label"));
 	}
 	
 	@Test
-	public void TC_2_2_8() {
+	public void TC_2_2_5() throws ServletException, IOException {
 		request.getSession().setAttribute("username", "adm12345");
 		request.addParameter("oldpassword", "ciao1234");
 		request.addParameter("newpassword", "ciao1235");
 		request.addParameter("repeatpassword", "ciao1235");
-		
-		String oracle="";
-		
-		IllegalArgumentException exception= assertThrows(IllegalArgumentException.class,() -> {
-			servlet.doPost(request,response);
-		});
-		assertEquals(oracle,exception.getMessage());
+		servlet.doPost(request, response);
 	}
 
 	@AfterEach

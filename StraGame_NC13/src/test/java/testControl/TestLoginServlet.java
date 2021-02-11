@@ -1,5 +1,8 @@
 package testControl;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -30,7 +33,7 @@ class TestLoginServlet {
 		request.addParameter("username","adm12345");
 		request.addParameter("password","ciao1234");
 		servlet.doPost(request,response);
-		response.getRedirectedUrl();
+		assertEquals("adm12345",request.getSession().getAttribute("username"));
 	}
 	
 	@Test
@@ -38,7 +41,7 @@ class TestLoginServlet {
 		request.addParameter("username","vincenzoStrano");
 		request.addParameter("password","ciao1234");
 		servlet.doPost(request,response);
-		response.getRedirectedUrl();
+		assertEquals(true,request.getSession().getAttribute("adminRoles"));
 	}
 	
 	@Test
@@ -46,23 +49,22 @@ class TestLoginServlet {
 		request.addParameter("username","vincenzoStrano");
 		request.addParameter("password","ciao12345");
 		servlet.doPost(request,response);
-		response.getRedirectedUrl();
+		assertNull(request.getSession().getAttribute("username"));
+		
 	}
 	
 	@Test
 	void testLoginFailure1() throws ServletException, IOException {
 		request.addParameter("username","vincenzoS");
 		request.addParameter("password","ciao1234");
-		servlet.doPost(request,response);
-		response.getRedirectedUrl();
+		assertNull(request.getSession().getAttribute("username"));
 	}
 	
 	@Test
 	void testLoginFailure2() throws ServletException, IOException {
 		request.addParameter("username","vincenzoS");
 		request.addParameter("password","ciao12345");
-		servlet.doPost(request,response);
-		response.getRedirectedUrl();
+		assertNull(request.getSession().getAttribute("username"));
 	}
 
 	@AfterEach

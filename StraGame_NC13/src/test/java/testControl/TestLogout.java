@@ -1,5 +1,9 @@
 package testControl;
 
+
+
+import static org.junit.Assert.assertNull;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -31,6 +35,7 @@ class TestLogout {
 		request.setAttribute("username", "user");
 		request.setAttribute("adminRoles", true);
 		servlet.doPost(request,response);
+		assertNull(request.getSession().getAttribute("username"));
 		
 	}
 	
