@@ -1,5 +1,9 @@
 package testControl;
 
+
+
+import static org.junit.Assert.assertEquals;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -31,7 +35,7 @@ class TestGetPhoto {
 		request.addParameter("action", "user");
 		request.addParameter("username","a.adm");
 		servlet.doPost(request,response);
-		response.getContentType();
+		assertEquals("image/jpeg", response.getContentType());
 	}
 	
 	@Test
@@ -39,7 +43,7 @@ class TestGetPhoto {
 		request.addParameter("action", "user");
 		request.addParameter("username","adm12345");
 		servlet.doPost(request,response);
-		response.getContentType();
+		assertEquals(null, response.getContentType());
 	}
 	
 	@Test
@@ -47,7 +51,7 @@ class TestGetPhoto {
 		request.addParameter("action", "pubblication");
 		request.addParameter("id","3249");
 		servlet.doPost(request,response);
-		response.getContentType();
+		assertEquals("image/jpeg", response.getContentType());
 	}
 	
 	@Test
@@ -56,6 +60,7 @@ class TestGetPhoto {
 		request.addParameter("id","3264");
 		servlet.doPost(request,response);
 		response.getContentType();
+		assertEquals(null, response.getContentType());
 	}
 	
 	@Test
@@ -63,7 +68,7 @@ class TestGetPhoto {
 		request.addParameter("action", "news");
 		request.addParameter("id","6");
 		servlet.doPost(request,response);
-		response.getContentType();
+		assertEquals("image/jpeg", response.getContentType());
 	}
 	
 	@Test
@@ -72,6 +77,7 @@ class TestGetPhoto {
 		request.addParameter("id","1");
 		servlet.doPost(request,response);
 		response.getContentType();
+		assertEquals(null, response.getContentType());
 	}
 	
 	@Test
@@ -79,7 +85,7 @@ class TestGetPhoto {
 		request.addParameter("action", "videogame");
 		request.addParameter("nome","The Crew 2");
 		servlet.doPost(request,response);
-		response.getContentType();
+		assertEquals("image/jpeg", response.getContentType());
 	}
 	
 	@AfterEach

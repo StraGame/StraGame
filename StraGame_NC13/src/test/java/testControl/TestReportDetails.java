@@ -1,5 +1,7 @@
 package testControl;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -28,9 +30,11 @@ class TestReportDetails {
 	@Test
 	void testDetails() throws ServletException, IOException {
 		
-		request.addParameter("id", "1");
-		request.addParameter("autore", "c.lau");
+		request.addParameter("id", "3264");
+		request.addParameter("autore", "adm12345");
 		servlet.doPost(request,response);
+		assertEquals("text/html",response.getContentType());
+		
 		
 		
 	}

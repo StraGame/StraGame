@@ -1,5 +1,7 @@
 package testControl;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -31,8 +33,8 @@ class TestCommentServlet {
 		request.getSession().setAttribute("username", "adm12345");
 		request.addParameter("id", "3251");
 		request.addParameter("commentText", "Ciao sono nei commenti");
-		
 		servlet.doPost(request, response);
+		assertEquals("text/html",response.getContentType());
 	}
 	
 	@Test
@@ -40,8 +42,8 @@ class TestCommentServlet {
 		request.getSession().setAttribute("username", "adm12345");
 		request.addParameter("id", "3252");
 		request.addParameter("commentText", "Ciao sono nei commenti");
-		
 		servlet.doPost(request, response);
+		assertEquals("text/html",response.getContentType());
 	}
 
 	@AfterEach

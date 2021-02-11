@@ -62,6 +62,32 @@ class TestBugServlet {
 			e.printStackTrace();
 		}
 	}
+    
+     public void testBugFilter1() throws ServletException, IOException {
+		
+    	request.addParameter("categoria", "Bug Grafico");
+		servlet.doPost(request,response);
+		try {
+			ArrayList<BugBean> list = bugdto.getAllBugFilter("","Bug Grafico");
+			assertEquals(list,request.getAttribute("bugs"));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+     
+     public void testBugFilter2() throws ServletException, IOException {
+ 		
+    	request.addParameter("videogioco", "The Crew 2");
+ 		servlet.doPost(request,response);
+ 		try {
+ 			ArrayList<BugBean> list = bugdto.getAllBugFilter("The Crew 2","");
+ 			assertEquals(list,request.getAttribute("bugs"));
+ 		} catch (SQLException e) {
+ 			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}
+ 	}
 	
 	
 

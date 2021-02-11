@@ -3,7 +3,10 @@ package testControl;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.io.IOException;
 import java.sql.SQLException;
+
+import javax.servlet.ServletException;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -181,21 +184,18 @@ class TestRegisterServlet {
 	}
 	
 	@Test
-	public void TC_2_1_7() {
+	public void duplicateUsername() throws ServletException, IOException {
 		request.addParameter("nome","Mario");
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "adm12345");
 				
-		String oracle="L'username gi� � presente all'interno del db";
-		
-		IllegalArgumentException exception= assertThrows(IllegalArgumentException.class,() -> {
-			servlet.doPost(request,response);
-		});
-		assertEquals(oracle,exception.getMessage());
+		String oracle="Username già presente";
+		servlet.doPost(request, response);
+		assertEquals(oracle,request.getAttribute("label"));
 	}
 	
 	@Test
-	public void TC_2_1_8() {
+	public void TC_2_1_7() {
 		request.addParameter("nome","Mario");
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "Mariomaff");
@@ -210,7 +210,7 @@ class TestRegisterServlet {
 	}
 	
 	@Test
-	public void TC_2_1_8_1() {
+	public void TC_2_1_7_1() {
 		request.addParameter("nome","Mario");
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "Mariomaff");
@@ -225,7 +225,7 @@ class TestRegisterServlet {
 	}
 	
 	@Test
-	public void TC_2_1_8_2() {
+	public void TC_2_1_7_2() {
 		request.addParameter("nome","Mario");
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "Mariomaff");
@@ -240,7 +240,7 @@ class TestRegisterServlet {
 	}
 	
 	@Test
-	public void TC_2_1_9() {
+	public void TC_2_1_8() {
 		request.addParameter("nome","Mario");
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "Mariomaff");
@@ -255,7 +255,7 @@ class TestRegisterServlet {
 	}
 	
 	@Test
-	public void TC_2_1_9_1() {
+	public void TC_2_1_8_1() {
 		request.addParameter("nome","Mario");
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "Mariomaff");
@@ -271,7 +271,7 @@ class TestRegisterServlet {
 	}
 	
 	@Test
-	public void TC_2_1_10() {
+	public void TC_2_1_9() {
 		request.addParameter("nome","Mario");
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "Mariomaff");
@@ -288,7 +288,7 @@ class TestRegisterServlet {
 	}
 	
 	@Test
-	public void TC_2_1_10_1() {
+	public void TC_2_1_9_1() {
 		request.addParameter("nome","Mario");
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "Mariomaff");
@@ -305,7 +305,7 @@ class TestRegisterServlet {
 	}
 	
 	@Test
-	public void TC_2_1_10_2() {
+	public void TC_2_1_9_2() {
 		request.addParameter("nome","Mario");
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "Mariomaff");
@@ -322,7 +322,7 @@ class TestRegisterServlet {
 	}
 	
 	@Test
-	public void TC_2_1_11() {
+	public void TC_2_1_10() {
 		request.addParameter("nome","Mario");
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "Mariomaff");
@@ -339,20 +339,14 @@ class TestRegisterServlet {
 	}
 	
 	@Test
-	public void TC_2_1_12() {
+	public void TC_2_1_11() throws ServletException, IOException {
 		request.addParameter("nome","Mario");
 		request.addParameter("cognome","Rossi");
 		request.addParameter("username", "Mariomaff");
 		request.addParameter("password", "Ciao1234");
 		request.addParameter("confirmedPassword", "Ciao1234");
 		request.addParameter("email", "mariorossi@yahoo.it");
-		
-		String oracle="";
-		
-		IllegalArgumentException exception= assertThrows(IllegalArgumentException.class,() -> {
-			servlet.doPost(request,response);
-		});
-		assertEquals(oracle,exception.getMessage());		
+		servlet.doPost(request, response);
 	}
 	
 	@AfterEach

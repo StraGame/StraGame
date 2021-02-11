@@ -289,7 +289,7 @@ class TestPubblicationDto {
 	@Test
 	void testGetPhoto() {
 		try {
-			byte[] photo=pubblicationdto.getPhoto(3250);
+			byte[] photo=pubblicationdto.getPhoto(3259);
 			assertNotNull(photo);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

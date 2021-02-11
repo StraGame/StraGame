@@ -1,5 +1,7 @@
 package testControl;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -28,6 +30,7 @@ class TestIndexServlet {
 	@Test
 	void test() throws ServletException, IOException {
 		servlet.doPost(request,response);
+		assertEquals("text/html",response.getContentType());
 	}
 	
 	@AfterEach

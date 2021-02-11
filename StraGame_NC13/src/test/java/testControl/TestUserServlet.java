@@ -1,5 +1,7 @@
 package testControl;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -30,6 +32,7 @@ class TestUserServlet {
 	@Test
 	public void testActionNull() throws ServletException, IOException {
 		servlet.doPost(request,response);
+		assertEquals("text/html",response.getContentType());
 	}
 	
 	@Test
@@ -38,6 +41,7 @@ class TestUserServlet {
 		request.addParameter("changeDescription", "ciao sono la descrizione");
 		request.getSession().setAttribute("username","adm12345");
 		servlet.doPost(request,response);
+		assertEquals("text/html",response.getContentType());
 	}
 	
 	@Test
@@ -49,6 +53,7 @@ class TestUserServlet {
 	    MockPart part = new MockPart("photo", "", b);
 	    request.addPart(part);
 		servlet.doPost(request,response);
+		assertEquals("text/html",response.getContentType());
 	}
 	
 	@Test
@@ -57,7 +62,7 @@ class TestUserServlet {
 		request.addParameter("username", "vincenzoStrano");
 		request.getSession().setAttribute("username","vincenzoStrano");
 		servlet.doPost(request,response);
-		response.getContentType();
+		assertEquals("image/jpeg",response.getContentType());
 	}
 	
 	@Test
@@ -66,7 +71,7 @@ class TestUserServlet {
 		request.addParameter("username", "adm12345");
 		request.getSession().setAttribute("username","adm12345");
 		servlet.doPost(request,response);
-		response.getContentType();
+		assertEquals(null,response.getContentType());
 	}
 	
 	@AfterEach

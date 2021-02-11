@@ -152,7 +152,7 @@ class TestNewsDto {
 	@Order(4)
 	void testGetPhotoNull() {
 		try {
-			byte[] photo=newsdto.getPhoto(5);
+			byte[] photo=newsdto.getPhoto(6);
 			assertNotNull(photo);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

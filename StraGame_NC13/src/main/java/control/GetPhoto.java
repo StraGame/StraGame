@@ -74,6 +74,7 @@ public class GetPhoto extends HttpServlet {
         response.setContentType("image/jpeg");    
             
       }
+      System.out.println(response.getContentType());
       out.close();
     } else if (action.equals("pubblication")) {
 

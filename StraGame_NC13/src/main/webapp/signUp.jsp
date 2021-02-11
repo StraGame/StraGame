@@ -34,33 +34,7 @@
 						title="Non usare numeri. La lunghezza deve essere compresa fra 2 e 25" required placeholder="cognome">
         <input id="username" name="username" type="text" pattern="([a-zA-Z0-9]{5,25})" title="Il campo username deve essere compreso fra 5 e 25 caratteri" placeholder="Username*" required />
         
-        <script type="text/javascript">
         
-        var username = document.getElementById("username");
-        function checkUsername(){
-    		
-    		var xhttp = new XMLHttpRequest();
-            xhttp.open("GET","UserCheckServlet="+username,true);
-             
-            xhttp.setRequestHeader("connection","close");
-            
-            xhttp.onreadystatechange = function() {
-           	   	 if(xhttp.responseText === "false"){
-           	   		 username.setCustomValidity("Username già presente");
-           	   	}
-           	   	 else{
-           	   		username.setCustomValidity("");
-           	   		 }
-            }
-            	
-            xhttp.send();
-    		
-    	}
-        
-        username.onchange=checkUsername;
-        username.onkeyup=checkUsername;
-        
-        </script>
         
         <input id="email" name="email" type="email" placeholder="E-Mail*" pattern="([a-zA-Z0-9_.-@]{12,45})" 
 								title="Il campo email non rispetta il formato o la lunghezza" required/>

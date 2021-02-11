@@ -43,7 +43,7 @@ class TestNewNewsServlet {
 		request.getSession().setAttribute("username","adm12345");
 		String oracle="Il titolo non rispetta la lunghezza";
 		
-		NumberFormatException exception= assertThrows(NumberFormatException.class,() -> {
+		IllegalArgumentException exception= assertThrows(IllegalArgumentException.class,() -> {
 			servlet.doPost(request,response);
 		});
 		assertEquals(oracle,exception.getMessage());

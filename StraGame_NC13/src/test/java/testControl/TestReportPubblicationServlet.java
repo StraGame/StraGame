@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 
@@ -15,6 +16,7 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
 import control.ReportPubblicationServlet;
+import model.ReportPubblicationBean;
 import model.ReportPubblicationDao;
 import model.ReportPubblicationDto;
 import model.UserDao;
@@ -130,19 +132,14 @@ class TestReportPubblicationServlet {
 	}
 	
 	@Test
-	void TC_4_4_4() {
+	void TC_4_4_4() throws ServletException, IOException {
 		request.addParameter("action","insert");
-		request.addParameter("id", "3232");
+		request.addParameter("id", "3233");
 		request.getSession().setAttribute("username","adm12345");
 		request.addParameter("testo", "Testo della segnalazione");
 		request.addParameter("categoria", "Spam");
+		servlet.doPost(request,response);
 		
-		String oracle="";
-		
-		IllegalArgumentException exception= assertThrows(IllegalArgumentException.class,() -> {
-			servlet.doPost(request,response);
-		});
-		assertEquals(oracle,exception.getMessage());
 	}
 	
 	@Test
@@ -156,8 +153,13 @@ class TestReportPubblicationServlet {
 	    request = null;    
 	    response = null;
 	    try {
-			reportdto.removeReportPubblication(3240, "adm12345");
-			userdto.setSegnalato("adm12345", false);
+			ArrayList<ReportPubblicationBean> list = reportdto.getAllPubblicationReport();
+			for(ReportPubblicationBean b : list) {
+				if(b.getDescrizione().equals("Testo della segnalazione")) {
+					
+					reportdto.removeReportPubblication(b.getCodicePubblicazione(), b.getAutore());
+				}
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

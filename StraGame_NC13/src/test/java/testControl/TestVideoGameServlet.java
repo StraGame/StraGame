@@ -188,6 +188,7 @@ class TestVideoGameServlet {
 		request.addParameter("action", "viewGame");
 		request.addParameter("nome", "The Crew 2");
 		servlet.doPost(request, response);
+		
 	}
 		
 	@AfterEach
