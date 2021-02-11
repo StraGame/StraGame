@@ -145,7 +145,7 @@
 	                                            <span class="label utente">&#128100 <%=bean.getAutore() %></span>
 	                                            <span class="label videogioco"><%=report.getCategoria() %></span>
 	                                            <%if(bean.getTipo().equals("recensione")){ %>
-	                                            <h3><a href="ReviewDetailsServlet?id=<%=bean.getCodicePubblicazione() %>" target="_self"><%=bean.getTitolo() %></a></h3> 
+	                                             <h3><a href="ReviewDetailsServlet?id=<%=bean.getCodicePubblicazione() %>" target="_self"><%=bean.getTitolo() %></a></h3> 
 	                                        	<%} else { %>
 	                                        	<h3><a href="TopicDetailsServlet?id=<%=bean.getCodicePubblicazione() %>" target="_self"><%=bean.getTitolo() %></a></h3> 
 	                                        	<%} %>
