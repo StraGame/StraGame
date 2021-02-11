@@ -144,7 +144,11 @@
 	                                        <div id="que-hedder2983">
 	                                            <span class="label utente">&#128100 <%=bean.getAutore() %></span>
 	                                            <span class="label videogioco"><%=report.getCategoria() %></span>
-	                                            <h3><a href="reviewDetails.jsp" target="_self"><%=bean.getTitolo() %></a></h3> 
+	                                            <%if(bean.getTipo().equals("recensione")){ %>
+	                                            <h3><a href="ReviewDetailsServlet?id=<%=bean.getCodicePubblicazione() %>" target="_self"><%=bean.getTitolo() %></a></h3> 
+	                                        	<%} else { %>
+	                                        	<h3><a href="TopicDetailsServlet?id=<%=bean.getCodicePubblicazione() %>" target="_self"><%=bean.getTitolo() %></a></h3> 
+	                                        	<%} %>
 	                                        </div>
 	                                        <hr>
 	                                            <div class="clockcomment"> &#128336 Segnalata il: <%=report.getData() %>
