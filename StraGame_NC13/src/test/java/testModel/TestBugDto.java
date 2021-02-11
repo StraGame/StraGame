@@ -106,7 +106,7 @@ class TestBugDto {
 	@Test
 	void testGetBugFailure() {
 		try {
-			BugBean bug= bugdto.getBug(100);
+			BugBean bug= bugdto.getBug(3000);
 			assertEquals(bug.getTitolo(),"");
 			
 		} catch (SQLException e) {
