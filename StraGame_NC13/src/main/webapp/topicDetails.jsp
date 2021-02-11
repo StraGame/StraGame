@@ -7,6 +7,7 @@
    ArrayList<NewsBean> news =(ArrayList<NewsBean>) request.getAttribute("news");
    ArrayList<CommentBean> comments = (ArrayList<CommentBean>) request.getAttribute("comments");
    %>
+   <%String label= (String) request.getAttribute("label"); %>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -17,6 +18,10 @@
 	response.sendRedirect("./TopicDetailsServlet");
 	return;
 }	%>
+
+<%if(label==null){%>
+<% label="";
+} %>
 
 <head>
     <meta charset="utf-8">
@@ -144,6 +149,7 @@
                             <hr>
                             <div class="post-footer29032">
                                 <div class="clockcomment"> &#128336 Data: <%=bean.getData() %></div>
+                                <label><%=label %></label>
                                 <div class="l-rightside45">
                             </div>
                         </div>

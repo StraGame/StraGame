@@ -118,7 +118,7 @@ public class ReportPubblicationServlet extends HttpServlet {
         report.setCodicePubblicazione(codicepubblicazione);
                 
         reportdto.insertReportPubblication(report);
-                
+        request.setAttribute("label", "Segnalazione avvenuta correttamente");
         userdto.setSegnalato(bean.getAutore(), true);
      
         if (bean.getTipo().equals("recensione")) {
