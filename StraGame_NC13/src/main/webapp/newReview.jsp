@@ -143,7 +143,7 @@
                     
                     <form id="form" action="NewReviewServlet?action=insert" enctype="multipart/form-data" method="post" name="newTopicForm" onsubmit="return validate(<%=(String) request.getSession().getAttribute("username")%>)">
                         <div class="username-part940">
-                            <span class="form-description43">Titolo* </span><input type="text" name="titolo" class="username029" placeholder="Scegli il titolo" pattern=".{5,45}" title="La lunghezza deve essere compresa fra 5 e 45" required>  
+                            <span class="form-description43">Titolo* </span><input type="text" name="titolo" pattern="([a-zA-Z0-9 ]{5,45})" title="la lunghezza del titolo deve essere compresa fra 5 e 45 caratteri,usare solo lettere maiuscole,minuscole e numeri" class="username029" placeholder="Scegli il titolo" pattern=".{5,45}" title="La lunghezza deve essere compresa fra 5 e 45" required>  
                         </div>
                         <div class="categori49">
                             <span class="form-description43305">Videogioco* </span>
