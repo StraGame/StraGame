@@ -8,9 +8,11 @@ import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.mock.web.MockPart;
@@ -19,6 +21,7 @@ import control.VideoGameServlet;
 import model.VideoGameDao;
 import model.VideoGameDto;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class TestVideoGameServlet {
 
 	private MockHttpServletRequest request;
@@ -167,9 +170,9 @@ class TestVideoGameServlet {
 		request.addParameter("titolo", "Final Fantasy 7");
 		request.addParameter("action", "insert");
 		request.addParameter("genere", "picchiaduro");
-		request.addParameter("descrizione","Final Fantasy 7 � un gioco di simulazione.");
+		request.addParameter("descrizione","Final Fantasy 7 è un gioco di simulazione.");
 		byte[] b = new byte[20];
-	    MockPart part = new MockPart("photo", "", b);
+	    MockPart part = new MockPart("foto", "", b);
 	    request.addPart(part);
 		servlet.doPost(request,response);
 		
@@ -193,7 +196,12 @@ class TestVideoGameServlet {
 	    request = null;    
 	    response = null;
 	    
-	    try {
+	    
+	}
+	
+	@AfterAll
+	public void restore() {
+		try {
 			gamedto.removeVideoGame("Final Fantasy 7");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
