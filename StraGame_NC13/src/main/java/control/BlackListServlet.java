@@ -67,7 +67,7 @@ public class BlackListServlet extends HttpServlet {
     String action = request.getParameter("action");
     if (action == null) {
     	System.out.println();
-    
+    	System.out.println();
       try {
         ArrayList<UserBean> users = userdto.retrieveAllReportUser();
         request.setAttribute("users", users);
