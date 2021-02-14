@@ -170,7 +170,7 @@
                 
                 <!--end of col-md-9 -->
                 <!--strart col-md-3 (side bar)-->
-                <aside class="col-md-3 sidebar97239" >
+                <aside class="col-md-3 sidebar97239" style="margin-top:-350px" >
                     <!--              login part-->
                     <div class="login-part2389">
                     <% if (ut==null){ %>
