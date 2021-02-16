@@ -17,7 +17,19 @@ public class UserBean implements Serializable {
   private Boolean segnalato;
   private Part photo;
   
-  public UserBean(String nickname, String nome, String cognome, String ruolo, String password, String email, String descrizione, Boolean segnalato) {
+  /**
+   * This constructs a new User.
+   * @param nickname type String
+   * @param nome type String
+   * @param cognome type String
+   * @param ruolo type String
+   * @param password type String
+   * @param email type String
+   * @param descrizione type String
+   * @param segnalato type Boolean
+   */
+  public UserBean(String nickname, String nome, String cognome, String ruolo, 
+      String password, String email, String descrizione, Boolean segnalato) {
     
     this.nickname = nickname;
     this.nome = nome;
@@ -29,6 +41,10 @@ public class UserBean implements Serializable {
     this.segnalato = segnalato;
   }
   
+  /**
+   * This inizialize a new user with nickname, cognome, nome, 
+   * ruolo, password, email, descrizione, segnalato.
+   */
   public UserBean() {
     
     this.nickname = "";

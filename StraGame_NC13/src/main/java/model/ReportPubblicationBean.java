@@ -10,6 +10,10 @@ public class ReportPubblicationBean {
   private String descrizione;
   private String data;
 
+  /**
+   * This inizialize a new ReportPubblication with codicePubblicazione,
+   * autore, categoria, descrizione, data.
+   */
   public ReportPubblicationBean() {
     codicePubblicazione = -1;
     autore = "";

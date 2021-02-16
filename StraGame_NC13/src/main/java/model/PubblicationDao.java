@@ -13,7 +13,8 @@ public interface PubblicationDao {
   
   public ArrayList<PubblicationBean> getPubsByVideogame(String videogame)throws SQLException;
   
-  public ArrayList<PubblicationBean> getAllPubFilter(String videogioco, String tipo) throws SQLException;
+  public ArrayList<PubblicationBean> getAllPubFilter(
+      String videogioco, String tipo) throws SQLException;
 
   public ArrayList<PubblicationBean> getPubsByTipo(String tipo) throws SQLException;
   

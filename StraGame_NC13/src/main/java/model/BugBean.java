@@ -12,7 +12,9 @@ public class BugBean implements Serializable {
   private String testo;
   private String categoria;
   
-  
+  /**
+   *  This constructs a new Bug with autore, videogioco, data, titolo, testo and categoria.
+   */
   public BugBean() { 
     
     autore = "";

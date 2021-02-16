@@ -28,13 +28,14 @@ public class DriverManagerConnectionPool {
     String password = "root";
 
     newConnection = DriverManager.getConnection("jdbc:mysql://" + ip + ":" + port + "/" + db 
-        + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", username, password);
+        + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetime"
+        + "Code=false&serverTimezone=UTC", username, password);
 
     newConnection.setAutoCommit(true);
     return newConnection;
   }
 
-
+  
   public static synchronized Connection getConnection() throws SQLException {
     Connection connection;
 
@@ -56,7 +57,8 @@ public class DriverManagerConnectionPool {
 
     return connection;
   }
-
+  
+  
   public static synchronized void releaseConnection(Connection connection) throws SQLException {
     if (connection != null) {
       freeDbConnections.add(connection);

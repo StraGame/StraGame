@@ -52,7 +52,7 @@ public void insertBug(BugBean b)throws SQLException {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
 
@@ -81,7 +81,7 @@ public void removeBug(int id)throws SQLException {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
 
@@ -124,12 +124,13 @@ public BugBean getBug(int id)throws SQLException {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return bean;
   }
 
+  @Override
   public ArrayList<BugBean> getAllBug() throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -165,7 +166,7 @@ public BugBean getBug(int id)throws SQLException {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return list;
@@ -212,7 +213,7 @@ public ArrayList<BugBean> getAllBugFilter(String videogioco, String categoria) t
             preparedStatement.close();
           }
         } finally {
-            connection.close();
+          connection.close();
         }
       }
       return list;
@@ -252,7 +253,7 @@ public ArrayList<BugBean> getAllBugFilter(String videogioco, String categoria) t
             preparedStatement.close();
           }
         } finally {
-            connection.close();
+          connection.close();
         }
       }
       return list;
@@ -296,7 +297,7 @@ public ArrayList<BugBean> getAllBugFilter(String videogioco, String categoria) t
             preparedStatement.close();
           }
         } finally {
-            connection.close();
+          connection.close();
         }
       }
       return list;

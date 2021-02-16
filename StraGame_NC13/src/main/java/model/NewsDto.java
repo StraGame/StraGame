@@ -55,7 +55,7 @@ public class NewsDto implements NewsDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }    
   }
@@ -83,7 +83,7 @@ public class NewsDto implements NewsDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }  
   }
@@ -121,7 +121,7 @@ public class NewsDto implements NewsDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return bean;
@@ -167,18 +167,19 @@ public class NewsDto implements NewsDao {
           statement.close();
         }
       } finally {
-          conn.close();
+        conn.close();
       }
     }
     return l;
   }
-    
+  
+  @Override
   public byte[] getPhoto(int id) throws SQLException {
         
     Connection connection = null;
     PreparedStatement preparedStatement = null;
         
-    byte bt [] = null;
+    byte [] bt = null;
     String imgSql = "SELECT immagine FROM news" + " WHERE codicenews =  ?";
     try {
       connection = DriverManagerConnectionPool.getConnection();
@@ -196,7 +197,7 @@ public class NewsDto implements NewsDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
             

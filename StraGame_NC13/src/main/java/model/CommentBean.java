@@ -9,7 +9,9 @@ public class CommentBean implements Serializable {
   private String data;
   private String testo;
   
-
+  /**
+   * This constracts a new Comment with codicePubblicazione, autore, data and testo..
+   */
   public CommentBean() {
     codicePubblicazione = -1;
     autore = "";

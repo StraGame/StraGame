@@ -35,7 +35,8 @@ public class PubblicationDto implements PubblicationDao {
     
     if (p.getTipo().equals("topic")) {
       
-      String insertSql = "INSERT INTO pubblication(autore,titolo,descrizione,videogioco,data,tipo,immagine) VALUES (?,?,?,?,?,?,?)";
+      String insertSql = "INSERT INTO pubblication(autore,titolo,descrizione,"
+          + "videogioco,data,tipo,immagine) VALUES (?,?,?,?,?,?,?)";
       
       
       try {
@@ -51,7 +52,8 @@ public class PubblicationDto implements PubblicationDao {
         preparedStatement.setString(6, p.getTipo());
         try {
           if (p.getPhoto() != null) {
-            preparedStatement.setBinaryStream(7, p.getPhoto().getInputStream(), (int) p.getPhoto().getSize());
+            preparedStatement.setBinaryStream(7, p.getPhoto().getInputStream(),
+                (int) p.getPhoto().getSize());
           } else {
             preparedStatement.setBinaryStream(7, null, 0);
           }
@@ -72,11 +74,13 @@ public class PubblicationDto implements PubblicationDao {
             preparedStatement.close();
           }
         } finally {
-            connection.close();
+          connection.close();
         }
       }
     } else {
-      String insertSql = "INSERT INTO pubblication(autore,titolo,descrizione,videogioco,data,tipo,immagine,trama,gameplay,grafica,votocomplessivo) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+      String insertSql = "INSERT INTO pubblication(autore,titolo,descrizione,"
+          + "videogioco,data,tipo,immagine,trama,gameplay,grafica,votocomplessivo)"
+          + " VALUES (?,?,?,?,?,?,?,?,?,?,?)";
       
       
       try {
@@ -93,7 +97,8 @@ public class PubblicationDto implements PubblicationDao {
         preparedStatement.setString(6, p.getTipo());
         try {
           if (p.getPhoto() != null) {
-            preparedStatement.setBinaryStream(7, p.getPhoto().getInputStream(), (int) p.getPhoto().getSize());
+            preparedStatement.setBinaryStream(7, p.getPhoto().getInputStream(),
+                (int) p.getPhoto().getSize());
           } else {
             preparedStatement.setBinaryStream(7, null, 0);
           }
@@ -118,12 +123,13 @@ public class PubblicationDto implements PubblicationDao {
             preparedStatement.close();
           }
         } finally {
-            connection.close();
+          connection.close();
         }
       }
     }   
   }
-
+  
+  @Override
   public ArrayList<PubblicationBean> getPubsByTipo(String tipo) throws SQLException {
     Connection conn = null;
     PreparedStatement statement = null;
@@ -162,7 +168,7 @@ public class PubblicationDto implements PubblicationDao {
           statement.close();
         }
       } finally {
-          conn.close();
+        conn.close();
       }
     }
     return l;
@@ -191,7 +197,7 @@ public class PubblicationDto implements PubblicationDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
   }
@@ -236,7 +242,7 @@ public class PubblicationDto implements PubblicationDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return bean;
@@ -250,7 +256,8 @@ public class PubblicationDto implements PubblicationDao {
     
     ArrayList<PubblicationBean> l = null;
     
-    String selectSql = "SELECT * FROM " + "pubblication" + " WHERE videogioco = ? ORDER BY data DESC";
+    String selectSql = "SELECT * FROM " + "pubblication" 
+        + " WHERE videogioco = ? ORDER BY data DESC";
     
     try {
       
@@ -290,7 +297,7 @@ public class PubblicationDto implements PubblicationDao {
           statement.close();
         }
       } finally {
-          conn.close();
+        conn.close();
       }
     }
     
@@ -298,7 +305,8 @@ public class PubblicationDto implements PubblicationDao {
   }
   
   @Override
-  public ArrayList<PubblicationBean> getAllPubFilter(String videogioco, String tipo) throws SQLException {
+  public ArrayList<PubblicationBean> getAllPubFilter(
+      String videogioco, String tipo) throws SQLException {
     
     if (videogioco == null) {
       return this.getPubsByTipo(tipo);
@@ -308,7 +316,8 @@ public class PubblicationDto implements PubblicationDao {
       
       ArrayList<PubblicationBean> l = new ArrayList<PubblicationBean>();
       
-      String selectSql = "SELECT * FROM " + "pubblication" + " WHERE videogioco = ? AND tipo=? ORDER BY data DESC";
+      String selectSql = "SELECT * FROM " + "pubblication" + " WHERE videogioco = ? "
+          + "AND tipo=? ORDER BY data DESC";
       
       try {
         connection = DriverManagerConnectionPool.getConnection();
@@ -341,7 +350,7 @@ public class PubblicationDto implements PubblicationDao {
             preparedStatement.close();
           }
         } finally {
-            connection.close();
+          connection.close();
         }
       }
       return l;
@@ -350,6 +359,7 @@ public class PubblicationDto implements PubblicationDao {
     }
   }
   
+  @Override
   public ArrayList<PubblicationBean> getAllPubblication() throws SQLException {
     Connection conn = null;
     PreparedStatement statement = null;
@@ -388,18 +398,19 @@ public class PubblicationDto implements PubblicationDao {
           statement.close();
         }
       } finally {
-          conn.close();
+        conn.close();
       }
     }
     return l;
   }
   
+  @Override
   public byte[] getPhoto(int codice) throws SQLException {
     
     Connection connection = null;
     PreparedStatement preparedStatement = null;
       
-    byte bt[] = null;
+    byte [] bt = null;
     String imgSql = "SELECT immagine FROM pubblication" + " WHERE codicepubblicazione =  ?";
     try {
       connection = DriverManagerConnectionPool.getConnection();
@@ -417,7 +428,7 @@ public class PubblicationDto implements PubblicationDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
         

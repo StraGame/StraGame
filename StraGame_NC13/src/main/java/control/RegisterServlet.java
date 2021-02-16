@@ -20,27 +20,20 @@ public class RegisterServlet extends HttpServlet {
     
   private static final long serialVersionUID = 1L;
   private UserDao userdto = new UserDto();   
-  /**
-    * @see HttpServlet#HttpServlet()
-  */
- 
+
   public RegisterServlet() {
     super();
     //TODO Auto-generated constructor stub
   }
 
-  /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-  */
+ 
   protected void doGet(HttpServletRequest request, HttpServletResponse response) 
       throws ServletException, IOException {
     //TODO Auto-generated method stub
     doPost(request, response);
   }
 
-  /**
-    * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-   */
+  @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) 
       throws ServletException, IOException {
     // TODO Auto-generated method stub
@@ -95,8 +88,8 @@ public class RegisterServlet extends HttpServlet {
     } else if (!username.matches("[a-zA-Z0-9 \']+")) {
       throw new IllegalArgumentException("L'username non rispetta il formato");
     } else {
-          bean.setNickname(username);
-        }
+      bean.setNickname(username);
+    }
        
     if (password.length() == 0) {
       throw new IllegalArgumentException("La password non rispetta la lunghezza");
@@ -125,19 +118,19 @@ public class RegisterServlet extends HttpServlet {
     }
         
     try {
-      if(userdto.retrieveUser(username).getNickname()=="") {
+      if (userdto.retrieveUser(username).getNickname() == "") {
         bean.setRuolo("user");
         bean.setSegnalato(false);
                 
         userdto.insertUser(bean);
         label = "registrazione riuscita";
       } else {
-        label="Username già presente";
+        label = "Username già presente";
       }
-        request.setAttribute("label", label);
-        RequestDispatcher dispatcher = 
-            getServletContext().getRequestDispatcher("/signUp.jsp");
-        dispatcher.forward(request, response);
+      request.setAttribute("label", label);
+      RequestDispatcher dispatcher = 
+          getServletContext().getRequestDispatcher("/signUp.jsp");
+      dispatcher.forward(request, response);
             
     } catch (SQLException e1) {
       // TODO Auto-generated catch block

@@ -47,7 +47,7 @@ public class ReportPubblicationDto implements ReportPubblicationDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
   }
@@ -75,13 +75,14 @@ public class ReportPubblicationDto implements ReportPubblicationDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }    
   }
   
   @Override
-  public ReportPubblicationBean getReportPubblication(int codicePubblicazione, String autore) throws SQLException {
+  public ReportPubblicationBean getReportPubblication(
+      int codicePubblicazione, String autore) throws SQLException {
 
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -114,12 +115,13 @@ public class ReportPubblicationDto implements ReportPubblicationDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return bean;
   }
   
+  @Override
   public ArrayList<ReportPubblicationBean> getAllPubblicationReport() throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -154,7 +156,7 @@ public class ReportPubblicationDto implements ReportPubblicationDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return l;
@@ -181,7 +183,7 @@ public class ReportPubblicationDto implements ReportPubblicationDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }    
   }

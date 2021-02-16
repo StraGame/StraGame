@@ -20,17 +20,12 @@ public class ChangePasswordServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
   private UserDao userdto = new UserDto();
        
-  /**
-     * @see HttpServlet#HttpServlet()
-  */
+  
   public ChangePasswordServlet() {
     super();
     // TODO Auto-generated constructor stub
   }
 
-  /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) 
       throws ServletException, IOException {
@@ -38,9 +33,7 @@ public class ChangePasswordServlet extends HttpServlet {
     doPost(request, response);
   }
 
-  /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
+  @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) 
         throws ServletException, IOException {
     // TODO Auto-generated method stub
@@ -62,7 +55,7 @@ public class ChangePasswordServlet extends HttpServlet {
       throw new IllegalArgumentException("La vecchia password non rispetta il formato");
     } 
   
-   if (newpassword.length() == 0) {
+    if (newpassword.length() == 0) {
       throw new IllegalArgumentException("La nuova password non rispetta la lunghezza");
     } else if (newpassword.length() < 8) {
       throw new IllegalArgumentException("La nuova password non rispetta la lunghezza");
@@ -71,31 +64,28 @@ public class ChangePasswordServlet extends HttpServlet {
     } else if (!newpassword.matches("[a-zA-Z0-9 \']+")) {
       throw new IllegalArgumentException("La nuova password non rispetta il formato");
     }
-  	
+      
    
     if (!newpassword.equals(oldpassword)) {
-      if(repeatpassword.equals(newpassword)) {
+      if (repeatpassword.equals(newpassword)) {
         try {
-        	if(userdto.retrieveUser(autore).getPassword().equals(oldpassword)) {
-    	  userdto.editPassword(newpassword, autore);
-    	  label="Password cambiata con successo";
-        	}
-        	else {
-        		label ="la vecchia password non è corretta";
-        	}
-    	} catch (SQLException e) {
-    	  // TODO Auto-generated catch block
-    	  e.printStackTrace();
-    	  label="Password non è stata cambiata";
-    				}
-    			}
-    			else {
-    				label="Le due password non corrispondono";
-    			}
-    		}
-    		else {
-    			label="La nuova password deve essere diversa da quella vecchia";
-    		}
+          if (userdto.retrieveUser(autore).getPassword().equals(oldpassword)) {
+            userdto.editPassword(newpassword, autore);
+            label = "Password cambiata con successo";
+          } else {
+            label = "la vecchia password non è corretta";
+          }
+        } catch (SQLException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+          label = "Password non è stata cambiata";
+        }
+      } else {
+        label = "Le due password non corrispondono";
+      }
+    } else {
+      label = "La nuova password deve essere diversa da quella vecchia";
+    }
     request.setAttribute("label", label);
     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/changePassword.jsp");
     dispatcher.forward(request, response);

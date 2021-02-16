@@ -12,6 +12,9 @@ public class NewsBean implements Serializable {
   private String testo;
   private Part photo;
     
+  /**
+   * This constructs a new News with autore, data, titolo and testo.
+   */
   public NewsBean() {
     autore = "";
     data = "";

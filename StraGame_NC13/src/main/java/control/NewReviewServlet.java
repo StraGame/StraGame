@@ -31,26 +31,20 @@ public class NewReviewServlet extends HttpServlet {
   private PubblicationDao pubblicationdto = new PubblicationDto();
   private NewsDao newsdto = new NewsDto();
        
-  /**
-     * @see HttpServlet#HttpServlet()
-     */
+
   public NewReviewServlet() {
     super();
     // TODO Auto-generated constructor stub
   }
 
-  /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
+  
   protected void doGet(HttpServletRequest request, HttpServletResponse response) 
       throws ServletException, IOException {
     // TODO Auto-generated method stub
     doPost(request, response);
   }
 
-  /**
-    * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-  */
+  @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) 
       throws ServletException, IOException {
     // TODO Auto-generated method stub
@@ -112,85 +106,86 @@ public class NewReviewServlet extends HttpServlet {
         throw new IllegalArgumentException("Il videogioco non rispetta la lunghezza");
       } else if (!videogioco.matches("[A-Za-z0-9 \']+")) {
         throw new IllegalArgumentException("Il videogioco non rispetta il formato");
-      } else
-		try {
-			if (videogiocodto.getVideoGame(videogioco).getNome().equals("")) {
-              throw new IllegalArgumentException("Il videogioco non esiste all'interno del db");
-            } else {
-              bean.setVideogioco(videogioco);
-			}
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-   
-      if (descrizione.length() == 0) {
-        throw new IllegalArgumentException("La descrizione non rispetta la lunghezza");
-      } else if (descrizione.length() > 2000) {
-        throw new IllegalArgumentException("La descrizione non rispetta la lunghezza");
       } else {
-        bean.setDescrizione(descrizione); 
-      }
+        try {
+          if (videogiocodto.getVideoGame(videogioco).getNome().equals("")) {
+            throw new IllegalArgumentException("Il videogioco non esiste all'interno del db");
+          } else {
+            bean.setVideogioco(videogioco);
+          }
+        } catch (SQLException e1) {
+          // TODO Auto-generated catch block
+          e1.printStackTrace();
+        }
+   
+        if (descrizione.length() == 0) {
+          throw new IllegalArgumentException("La descrizione non rispetta la lunghezza");
+        } else if (descrizione.length() > 2000) {
+          throw new IllegalArgumentException("La descrizione non rispetta la lunghezza");
+        } else {
+          bean.setDescrizione(descrizione); 
+        }
 
-      if (gameplay == 0) {
-        throw new IllegalArgumentException("Il gameplay è minore di 1 o maggiore di 10");
-      } else if (gameplay < 0) {
-        throw new IllegalArgumentException("Il gameplay è minore di 1 o maggiore di 10");
-      } else if (gameplay > 10) {
-        throw new IllegalArgumentException("Il gameplay è minore di 1 o maggiore di 10");
-      } else {
-        bean.setGameplay(gameplay);
-      }
+        if (gameplay == 0) {
+          throw new IllegalArgumentException("Il gameplay ï¿½ minore di 1 o maggiore di 10");
+        } else if (gameplay < 0) {
+          throw new IllegalArgumentException("Il gameplay ï¿½ minore di 1 o maggiore di 10");
+        } else if (gameplay > 10) {
+          throw new IllegalArgumentException("Il gameplay ï¿½ minore di 1 o maggiore di 10");
+        } else {
+          bean.setGameplay(gameplay);
+        }
    
-      if (grafica == 0) {
-        throw new IllegalArgumentException("La grafica è minore di 1 o maggiore di 10");
-      } else if (grafica < 0) {
-        throw new IllegalArgumentException("La grafica è minore di 1 o maggiore di 10");
-      } else if (grafica > 10) {
-        throw new IllegalArgumentException("La grafica è minore di 1 o maggiore di 10");
-      } else {
-        bean.setGrafica(grafica);
-      }
+        if (grafica == 0) {
+          throw new IllegalArgumentException("La grafica ï¿½ minore di 1 o maggiore di 10");
+        } else if (grafica < 0) {
+          throw new IllegalArgumentException("La grafica ï¿½ minore di 1 o maggiore di 10");
+        } else if (grafica > 10) {
+          throw new IllegalArgumentException("La grafica ï¿½ minore di 1 o maggiore di 10");
+        } else {
+          bean.setGrafica(grafica);
+        }
    
-      if (trama == 0) {
-        throw new IllegalArgumentException("La trama è minore di 1 o maggiore di 10");
-      } else if (trama < 0) {
-        throw new IllegalArgumentException("La trama è minore di 1 o maggiore di 10");
-      } else if (trama > 10) {
-        throw new IllegalArgumentException("La trama è minore di 1 o maggiore di 10");
-      } else {
-        bean.setTrama(trama);
-      }
+        if (trama == 0) {
+          throw new IllegalArgumentException("La trama ï¿½ minore di 1 o maggiore di 10");
+        } else if (trama < 0) {
+          throw new IllegalArgumentException("La trama ï¿½ minore di 1 o maggiore di 10");
+        } else if (trama > 10) {
+          throw new IllegalArgumentException("La trama ï¿½ minore di 1 o maggiore di 10");
+        } else {
+          bean.setTrama(trama);
+        }
    
-      if (votocomplessivo == 0) {
-        throw new IllegalArgumentException("Il voto complessivo è minore di 1 o maggiore di 10");
-      } else if (votocomplessivo < 0) {
-        throw new IllegalArgumentException("Il voto complessivo è minore di 1 o maggiore di 10");
-      } else if (votocomplessivo > 10) {
-        throw new IllegalArgumentException("Il voto complessivo è minore di 1 o maggiore di 10");
-      } else {
-        bean.setVoto(votocomplessivo);
-      }
+        if (votocomplessivo == 0) {
+          throw new IllegalArgumentException("Il voto complessivo ï¿½ minore di 1 o maggiore di 10");
+        } else if (votocomplessivo < 0) {
+          throw new IllegalArgumentException("Il voto complessivo ï¿½ minore di 1 o maggiore di 10");
+        } else if (votocomplessivo > 10) {
+          throw new IllegalArgumentException("Il voto complessivo ï¿½ minore di 1 o maggiore di 10");
+        } else {
+          bean.setVoto(votocomplessivo);
+        }
                   
-      try {
+        try {
 
-        bean.setAutore(autore);
-        bean.setTipo("recensione");
-        bean.setPhoto(photo);
+          bean.setAutore(autore);
+          bean.setTipo("recensione");
+          bean.setPhoto(photo);
                     
-        pubblicationdto.insertPubblication(bean);
-        label = "Recensione inserita con successo";
+          pubblicationdto.insertPubblication(bean);
+          label = "Recensione inserita con successo";
                     
-        request.setAttribute("label", label);
+          request.setAttribute("label", label);
                 
-        RequestDispatcher dispatcher = 
-            getServletContext().getRequestDispatcher("/newReview.jsp");
-        dispatcher.forward(request, response);
+          RequestDispatcher dispatcher = 
+              getServletContext().getRequestDispatcher("/newReview.jsp");
+          dispatcher.forward(request, response);
                 
-      } catch (SQLException e) {
-        label = "Recensione non inserita correttamente";
-        // TODO Auto-generated catch block
-        e.printStackTrace();
+        } catch (SQLException e) {
+          label = "Recensione non inserita correttamente";
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        }
       }
     }
   }

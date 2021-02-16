@@ -41,7 +41,7 @@ public class CommentDto implements CommentDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
   }
@@ -74,7 +74,7 @@ public class CommentDto implements CommentDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
   }
@@ -119,12 +119,15 @@ public class CommentDto implements CommentDao {
           statement.close();
         }
       } finally {
-          conn.close();
+        conn.close();
       }
     }
     return l;
   }
     
+  /**
+   * This remove all comment by publication.
+   */
   public void removeAllCommentByPub(int codicePubblicazione) throws SQLException {
     Connection conn = null;
     PreparedStatement statement = null;
@@ -145,11 +148,12 @@ public class CommentDto implements CommentDao {
           statement.close();
         }
       } finally {
-          conn.close();
+        conn.close();
       }
     }
   }
     
+  @Override
   public ArrayList<CommentBean> getAllComments()throws SQLException {
     Connection conn = null;
     PreparedStatement statement = null;
@@ -186,7 +190,7 @@ public class CommentDto implements CommentDao {
           statement.close();
         }
       } finally {
-          conn.close();
+        conn.close();
       }
     }
     return l;

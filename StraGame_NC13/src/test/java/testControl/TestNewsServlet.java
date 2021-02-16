@@ -14,30 +14,30 @@ import control.NewsServlet;
 
 class TestNewsServlet {
 
-	private MockHttpServletRequest request;
-	private NewsServlet servlet;
-	private MockHttpServletResponse response;
-	
-	@BeforeEach
-	public void setUp() throws Exception {
-		servlet=new NewsServlet();
-		request=new MockHttpServletRequest();
-		response=new MockHttpServletResponse();
-	}
+  private MockHttpServletRequest request;
+  private NewsServlet servlet;
+  private MockHttpServletResponse response;
+    
+  @BeforeEach
+    public void setUp() throws Exception {
+    servlet = new NewsServlet();
+    request = new MockHttpServletRequest();
+    response = new MockHttpServletResponse();
+  }
 
-	@Test
-	public void testNews() throws ServletException, IOException {
-		
-		servlet.doPost(request,response);
-		
-	}
-	
-	@AfterEach
-	public void tearDown() {
-	    servlet = null;
-	    request = null;    
-	    response = null;
-	    
-	  }
+  @Test
+    public void testNews() throws ServletException, IOException {
+        
+    servlet.doPost(request, response);
+        
+  }
+    
+  @AfterEach
+    public void tearDown() {
+    servlet = null;
+    request = null;    
+    response = null;
+        
+  }
 
 }

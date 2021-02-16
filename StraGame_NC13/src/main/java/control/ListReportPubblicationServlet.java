@@ -36,26 +36,20 @@ public class ListReportPubblicationServlet extends HttpServlet {
   private UserDao userdto = new UserDto();
     
        
-  /**
-     * @see HttpServlet#HttpServlet()
-     */
+ 
   public ListReportPubblicationServlet() {
     super();
     //TODO Auto-generated constructor stub
   }
 
-  /**
-    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-  */
+ 
   protected void doGet(HttpServletRequest request, HttpServletResponse response) 
       throws ServletException, IOException {
     //TODO Auto-generated method stub
     doPost(request, response);
   }
 
-  /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
+  @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) 
         throws ServletException, IOException {
     // TODO Auto-generated method stub

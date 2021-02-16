@@ -29,17 +29,13 @@ public class GetPhoto extends HttpServlet {
   private NewsDao newsdto = new NewsDto();
   private VideoGameDao videogamedto = new VideoGameDto();
        
-  /**
-     * @see HttpServlet#HttpServlet()
-     */
+
   public GetPhoto() {
     super();
     // TODO Auto-generated constructor stub
   }
 
-  /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
+ 
   protected void doGet(HttpServletRequest request, HttpServletResponse response) 
         throws ServletException, IOException {
 
@@ -47,9 +43,7 @@ public class GetPhoto extends HttpServlet {
     
   }
 
-  /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
+  @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) 
         throws ServletException, IOException {
         

@@ -9,7 +9,8 @@ public interface ReportPubblicationDao {
   
   public void removeReportPubblication(int codicePubblicazione, String autore) throws SQLException;
   
-  public ReportPubblicationBean getReportPubblication(int codicePubblicazione, String autore) throws SQLException;
+  public ReportPubblicationBean getReportPubblication(
+      int codicePubblicazione, String autore) throws SQLException;
 
   public ArrayList<ReportPubblicationBean> getAllPubblicationReport() throws SQLException;
   

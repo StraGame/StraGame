@@ -19,8 +19,7 @@ import javax.sql.DataSource;
 
 public class UserDto implements UserDao {
 
-  
-
+  @Override
   public ArrayList<UserBean> retrieveAll() throws SQLException {
 
 
@@ -58,12 +57,13 @@ public class UserDto implements UserDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return users;
   }
   
+  @Override
   public boolean editDescription(String description, String nickname)throws SQLException {
   
   
@@ -91,12 +91,13 @@ public class UserDto implements UserDao {
         }
     
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return false;
   }
   
+  @Override
   public void editPassword(String password, String nickname)throws SQLException {
   
   
@@ -123,7 +124,7 @@ public class UserDto implements UserDao {
         }
     
       } finally {
-          connection.close();
+        connection.close();
       }
     }
   }
@@ -166,18 +167,19 @@ public class UserDto implements UserDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return bean;
   }
   
+  @Override
   public synchronized byte[] getPhoto(String nickname) throws SQLException {
   
     Connection connection = null;
     PreparedStatement preparedStatement = null;
   
-    byte bt[] = null;
+    byte [] bt = null;
     String imgSql = "SELECT foto FROM user" + " WHERE nickname =  ?";
     try {
       connection = DriverManagerConnectionPool.getConnection();
@@ -195,7 +197,7 @@ public class UserDto implements UserDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return bt;
@@ -208,7 +210,8 @@ public class UserDto implements UserDao {
     PreparedStatement preparedStatement = null;
 
     String insertSql = "INSERT INTO " + "user"
-        + " (nickname,ruolo,email,nome,cognome,password,descrizione,segnalato) VALUES (?, ?, ?, ?, ? , ? , ?,?)";
+        + " (nickname,ruolo,email,nome,cognome,password,descrizione,segnalato) "
+        + "VALUES (?, ?, ?, ?, ? , ? , ?,?)";
 
     try {
       connection = DriverManagerConnectionPool.getConnection();
@@ -233,7 +236,7 @@ public class UserDto implements UserDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
   }
@@ -260,11 +263,12 @@ public class UserDto implements UserDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }  
   }
   
+  @Override
   public void setSegnalato(String nickname, boolean segnalato) throws SQLException {
   
     Connection connection = null;
@@ -286,11 +290,12 @@ public class UserDto implements UserDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     } 
   }
   
+  @Override
   public ArrayList<UserBean> retrieveAllReportUser()throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -327,7 +332,7 @@ public class UserDto implements UserDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return users;
@@ -366,7 +371,7 @@ public class UserDto implements UserDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     } 
   }

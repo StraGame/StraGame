@@ -10,7 +10,9 @@ public class VideoGameBean implements Serializable {
   private String descrizione;
   private Part photo;
   
-
+  /**
+   * This inizialize a new VideoGame with nome, genere and descrizione.
+   */
   public VideoGameBean() {
     
     nome = "";

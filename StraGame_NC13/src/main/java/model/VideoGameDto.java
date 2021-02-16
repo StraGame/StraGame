@@ -63,8 +63,7 @@ public class VideoGameDto implements VideoGameDao {
           preparedStatement.close();
         }
       } finally {
-
-          connection.close();
+        connection.close();
       }
     }       
   }
@@ -90,7 +89,7 @@ public class VideoGameDto implements VideoGameDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }    
   }
@@ -125,7 +124,7 @@ public class VideoGameDto implements VideoGameDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return bean;
@@ -161,18 +160,19 @@ public class VideoGameDto implements VideoGameDao {
           statement.close();
         }
       } finally {
-          conn.close();
+        conn.close();
       }
     }
     return l;
   }
-    
+  
+  @Override
   public byte[] getPhoto(String nome) throws SQLException {
         
     Connection connection = null;
     PreparedStatement preparedStatement = null;
         
-    byte bt[] = null;
+    byte [] bt = null;
     String imgSql = "SELECT foto FROM videogioco" + " WHERE nome =  ?";
     try {
       connection = DriverManagerConnectionPool.getConnection();
@@ -190,12 +190,13 @@ public class VideoGameDto implements VideoGameDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }       
     return bt;
   }
-
+  
+  @Override
   public ArrayList<VideoGameBean> getAllVideoGame()throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -225,7 +226,7 @@ public class VideoGameDto implements VideoGameDao {
           preparedStatement.close();
         }
       } finally {
-          connection.close();
+        connection.close();
       }
     }
     return array;

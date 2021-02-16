@@ -39,54 +39,47 @@ public class BlackListServlet extends HttpServlet {
   private CommentDao commentdto = new CommentDto();
   private ReportPubblicationDao reportdto = new ReportPubblicationDto();
   private BugDao bugdto = new BugDto();
-       
-  /**
-     * @see HttpServlet#HttpServlet()
-     */
+
+
   public BlackListServlet() {
     super();
     // TODO Auto-generated constructor stub
   }
 
-  /**
-   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-   */
-  protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+  @Override
+protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     // TODO Auto-generated method stub
     doPost(request, response);
   }
 
-  /**
-   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-   */
-  public void doPost(HttpServletRequest request, HttpServletResponse response) 
+  @Override
+public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     // TODO Auto-generated method stub
-    
+
     String action = request.getParameter("action");
     if (action == null) {
-    	System.out.println();
-    	
+
       try {
         ArrayList<UserBean> users = userdto.retrieveAllReportUser();
         request.setAttribute("users", users);
-      
+
         ArrayList<NewsBean> newsList = newsdto.getAllNews();
         request.setAttribute("news", newsList);
-      
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/blackList.jsp");
         dispatcher.forward(request, response);
-      
-      
+
+
       } catch (SQLException e) {
-      
+
         e.printStackTrace(); // TODO Auto-generated catch block
       }
-    
+
     } else {
       String nickname = request.getParameter("nickname");
-      
+
       try {
         ArrayList<PubblicationBean> pubblicazioni = pubblicationdto.getAllPubblication();
         for (PubblicationBean p : pubblicazioni) {
@@ -94,7 +87,7 @@ public class BlackListServlet extends HttpServlet {
             reportdto.removeAllReportByPub(p.getCodicePubblicazione());
             commentdto.removeAllCommentByPub(p.getCodicePubblicazione());
             pubblicationdto.removePubblication(p.getCodicePubblicazione());
-            
+
           }
         }
         ArrayList<BugBean> bugs = bugdto.getAllBug();
@@ -106,12 +99,12 @@ public class BlackListServlet extends HttpServlet {
         }
 
         userdto.removeUser(nickname);
-        
+
         ServletContext ctx = this.getServletContext();
-        
+
         RequestDispatcher dispatcher = ctx.getRequestDispatcher("/blackList.jsp");
         dispatcher.forward(request, response);
-        
+
       } catch (SQLException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();

@@ -18,6 +18,10 @@ public class PubblicationBean {
   private String tipo;
   private Part photo;
   
+  /**
+   * This constructs a new Publication with codicePubblicazione, autore, titolo, descrizione,
+   * videogioco, data, gameplay, trama, grafica, voto, photo.
+   */
   public PubblicationBean() {
     
     codicePubblicazione = 0;
